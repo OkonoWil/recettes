@@ -1,0 +1,126 @@
+main {
+  display: flex;
+  justify-content: center;
+}
+form {
+  margin-top: 60px;
+  margin-bottom: 10px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 70vw;
+}
+form h1 {
+  font-size: 20px;
+}
+form .corps-formulaire {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  width: 100%;
+}
+form .separation {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color1);
+}
+form .corps-formulaire .groupe {
+  position: relative;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+form .corps-formulaire .gauche,
+form .corps-formulaire .droite {
+  width: 45%;
+}
+form .corps-formulaire .gauche .groupe input {
+  margin-top: 5px;
+  padding: 10px 5px 10px 30px;
+  border: 1px solid var(--color2);
+  outline-color: 5px;
+}
+form .corps-formulaire .gauche .groupe i {
+  position: absolute;
+  left: 0;
+  top: 30px;
+  padding: 9px 8px;
+  color: var(--color1);
+}
+form .corps-formulaire .droite {
+  margin-left: 40px;
+}
+form .corps-formulaire .droite .groupe {
+  height: 100%;
+}
+form .corps-formulaire .droite .groupe textarea {
+  margin-top: 5px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border: 2px solid var(--color2);
+  resize: none;
+  height: 80%;
+  width: 100%;
+}
+form .pied-formulaire {
+  display: flex;
+  justify-content: center;
+}
+form .pied-formulaire input {
+  margin-top: 10px;
+  background-color: var(--color1);
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+form .pied-formulaire input:hover {
+  transform: scale(1.05);
+}
+/*@media screen and (max-width: 875px) {
+    form .corps-formulaire .droite {
+      margin-left: 0px;
+    }
+  }*/
+@media (max-width: 1000px) {
+  form {
+    width: 85vw;
+  }
+}
+@media (max-width: 900px) {
+  form {
+    width: 95vw;
+  }
+}
+@media (max-width: 750px) {
+  form {
+    width: 80vw;
+  }
+  form .corps-formulaire {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+  }
+  form .corps-formulaire .gauche,
+  form .corps-formulaire .droite {
+    width: 100%;
+    margin: 0;
+  }
+  form .corps-formulaire .droite .groupe textarea {
+    height: 150px;
+    width: 100%;
+  }
+}
+@media (max-width: 550px) {
+  form {
+    width: 95vw;
+  }
+  form .corps-formulaire .droite .groupe textarea {
+    height: 100px;
+  }
+}
