@@ -5,21 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('FontAwesone/css/all.css')}}">
-    <title>{{config('app.name')}} | @yield('title')</title>
+    <title>{{env('APP_NAME')}} | @yield('title')</title>
     @vite('resources/css/app.css')
 </head>
 <body>
     <div>
         <div>
+
             @section('sidebar')
-
+            @include('partials.sidebar')
             @show
-            <div>
-                @section('connexion_bar')
 
+            <div>
+
+                @section('connexion_bar')
+                @include('partials.connexionBar')
                 @show
-                
+
                 @yield('content')
+
             </div>
             
         </div>
