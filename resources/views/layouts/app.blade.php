@@ -14,17 +14,23 @@
             @section('sidebar')
 
             @show
+            <div>
+                @section('connexion_bar')
 
-            @yield('content')
+                @show
+                
+                @yield('content')
+            </div>
+            
         </div>
-        <footer>
+        <footer class="px-5 flex justify-between h-20 bg-emerald-300 text-white text-xl items-center">
             <div>
                 <p>&copy; Copyright {{date('Y')}}. Okono Wilfried, développeur full stack</p>
             </div>
             <div>
-                <a href="https://www.linkedin.com/in/wilfried-lo%C3%AFc-okono-mehitang-11a380218/)"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://twitter.com/OkonoWilfried"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://github.com/OkonoWil"><i class="fa-brands fa-github"></i></a>
+                <a class="m-2" href="https://www.linkedin.com/in/wilfried-lo%C3%AFc-okono-mehitang-11a380218/)"><i class="fa-brands fa-linkedin"></i></a>
+                <a class="m-2" href="https://twitter.com/OkonoWilfried"><i class="fa-brands fa-twitter"></i></a>
+                <a class="m-2" href="https://github.com/OkonoWil"><i class="fa-brands fa-github"></i></a>
             </div>
         </footer>
     </div>
