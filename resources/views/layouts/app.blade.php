@@ -10,17 +10,19 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div>
-        <div>
+    <div class=" box-border">
+        <div class="flex flex-row h-full box-border">
 
+            <!--  -->
             @section('sidebar')
-            @include('partials.sidebar')
+                @include('partials.sidebar')
             @show
 
+            <!--  -->
             <div>
 
-                @section('connexion_bar')
-                @include('partials.connexionBar')
+                @section('connexionBar')
+                    @include('partials.connexionBar')
                 @show
 
                 @yield('content')
