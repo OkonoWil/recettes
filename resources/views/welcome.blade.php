@@ -1,3 +1,3 @@
 @extends('layouts.app')
 
-@section('title', config('app.name'))
+@section('title', 'Home')

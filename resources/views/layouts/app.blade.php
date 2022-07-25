@@ -10,7 +10,7 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div class=" box-border">
+    <div class=" box-border pt-2 text-gray-500">
         <div class="flex flex-row h-full box-border">
 
             <!--  -->
@@ -30,7 +30,7 @@
             </div>
             
         </div>
-        <footer class="px-5 flex justify-between h-20 bg-emerald-300 text-white text-xl items-center">
+        <footer class="px-5 flex justify-between h-20 bg-orange-400 text-white text-xl items-center">
             <div>
                 <p>&copy; Copyright {{date('Y')}}. Okono Wilfried, développeur full stack</p>
             </div>
