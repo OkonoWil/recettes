@@ -10,16 +10,16 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div class=" box-border pt-2 text-gray-500">
-        <div class="flex flex-row h-full box-border">
+    <div class=" box-border text-gray-500">
+        <div class="flex flex-row justify-end h-full">
 
-            <!--  -->
+            {{-- --}}
             @section('sidebar')
                 @include('partials.sidebar')
             @show
 
-            <!--  -->
-            <div>
+            {{-- --}}
+            <div class="w-3/4 bg-gray-100 pt-3 pr-4">
 
                 @section('connexionBar')
                     @include('partials.connexionBar')
@@ -30,7 +30,7 @@
             </div>
             
         </div>
-        <footer class="px-5 flex justify-between h-20 bg-orange-400 text-white text-xl items-center">
+        <footer class="px-5 flex justify-between h-20 text-white text-xl items-center bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-400">
             <div>
                 <p>&copy; Copyright {{date('Y')}}. Okono Wilfried, développeur full stack</p>
             </div>

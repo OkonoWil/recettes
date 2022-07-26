@@ -1,12 +1,15 @@
-<nav class="h-full box-border">
-    <a href="{{route('home')}}" class="flex flex-row items-center text-3xl">
+<nav class="h-full box-border flex justify-end flex-col w-1/4 px-3">
+    <a href="{{route('home')}}" class="flex flex-row justify-center text-3xl my-5">
         <img src="./icon/tcho_et_yamo.png" alt="Tcop et Yamo">
-        <span class="font-extrabold text-orange-400">Tchop<span class="text-gray-300">Et</span>Yamo</span>
+        <span class="font-extrabold text-orange-400 ml-2">Tchop<span class="text-gray-300">Et</span>Yamo</span>
     </a>
-    <ul class="flex flex-col justify-end text-xl">
-        <li><a href="">Accueil <i class="fa-solid fa-house"></i></li></a>
-        <li><a href="">Ajouter une recette <i class="fa-solid fa-utensils"></i></a></li>
-        <li><a href="">A propos <i class="fa-solid fa-at"></i></a></li>
-        <li><a href="">Contact <i class="fa-solid fa-envelope"></i></a></li>
+    <ul class="flex flex-col items-start text-xl my-5 pl-5">
+        <li class="max-w-fit border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class="" href=""><i class="fa-solid fa-house"></i> Accueil</li></a>
+        <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class="" href=""><i class="fas fa-server"></i> Tableau de bord</li></a>
+        <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class="" href=""><i class="fa-solid fa-concierge-bell"></i>Recettes</li></a>
+        <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class="" href=""><i class="fa-solid fa-calendar-alt"></i> Catégori</li></a>
+        <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a href=""><i class="fa-solid fa-utensils"></i> Ajouter une recette</a></li>
+        <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a href=""><i class="fa-solid fa-question-circle"></i> A propos</a></li>
+        <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a href=""><i class="fa-solid fa-address-card"></i> Contact</a></li>
     </ul>
 </nav>
