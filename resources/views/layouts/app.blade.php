@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class=" box-border text-gray-500">
-        <div class="flex flex-row justify-end h-full">
+        <div class="">
 
             {{-- --}}
             @section('sidebar')
@@ -19,7 +19,7 @@
             @show
 
             {{-- --}}
-            <div class="w-3/4 bg-gray-100 pt-3 pr-4">
+            <div class="box-border ml-72 bg-gray-100 pt-3 pr-4">
 
                 @section('connexionBar')
                     @include('partials.connexionBar')
