@@ -67,7 +67,7 @@
                     <span class="text-sm text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <input type="password" name="passwordconf" id="passwordconf" placeholder="Confirmez votre mot de passe" class="block p-2.5 mx-2 my-1 bg-gray-50 text-gray-600 w-full border border-gray-500 box-border rounded-md" value="{{old('password')}}">
+                <input type="password" name="passwordconf" id="passwordconf" placeholder="Confirmez votre mot de passe" class="block p-2.5 mx-2 my-1 bg-gray-50 text-gray-600 w-full border border-gray-500 box-border rounded-md" value="{{old('passwordconf')}}">
             </div>
         </div>
         

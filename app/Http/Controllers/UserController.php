@@ -38,16 +38,26 @@ class UserController extends Controller
     {
         $this->validate($request, [
             'name' => ['required'],
+            'sexe' => ['required'],
+            'username' => ['required', 'unique:users,username'],
             'email' => ['required', 'unique:users,email'],
-            'password' => ['required'],
+            'password' => ['required', 'min:4'],
+            'passwordconf' => ['required', 'min:4'],
             'condition' => ['accepted']
         ]);
+        if ($request->password != $request->passwordconf) {
+            return redirect()->back()->withErrors(['passwordconf' => 'Invalid']);
+        }
+
         User::create([
             'name' => $request->name,
+            'username' => $request->username,
+            'sexe' => $request->sexe,
             'email' => $request->email,
+            'email_verified_at' => now(),
             'password' => Hash::make($request->password)
         ]);
-        return redirect()->route('products.index');
+        return $this->postLogin($request);
     }
     public function logout()
     {
