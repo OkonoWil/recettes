@@ -28,7 +28,11 @@ class UserController extends Controller
             return redirect()->back()->withErrors(['password' => 'Invalid credentials']);
         }
         Auth::login($user, $request->remember);
-        return redirect()->intended(RouteServiceProvider::HOME);
+        if (Auth::user()->admin) {
+            return redirect()->intended('home');
+        } else {
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }
     }
     function getRegister()
     {
@@ -62,6 +66,6 @@ class UserController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('home');
+        return redirect()->route('welcome');
     }
 }

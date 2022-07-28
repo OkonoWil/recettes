@@ -3,7 +3,7 @@
     @auth
         <div id="dropdown" class="flex flex-col items-between max-w-xs py-2 px-4 bg-orange-300 border border-orange-500 rounded-md text-white truncate">
             <button id="btntop" class="flex flex-row justify-between items-center w-full font-bold ">
-                <span><i class="fa-solid fa-user mr-2"></i>{{Auth::user()->username}}</span>
+                <span><i class="fa-solid fa-user mr-2"></i>{{Auth::user()->username}} <span class="font-extrabold text-orange-500 mr-1">{{Auth::user()->admin ? 'Admin' : '' }}</span></span>
                 <i class="fa-solid fa-chevron-down"></i>
             </button>
             <div id="bloclinks" class="transition h-0 transition-h ">

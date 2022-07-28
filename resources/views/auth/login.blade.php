@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="flex flex-row justify-center m-3 box-border">
-            <input type="submit" value="Login" class="bg-teal-700 text-white font-bold border rounded-md text-center px-5 py-2">
+            <input type="submit" value="Login" class="bg-teal-700 text-white font-bold border rounded-md text-center px-5 py-2 cursor-pointer">
         </div>
         <div>
             <p>Vous n'avez pas de compte? <a href="{{route('getregister')}}" class="text-teal-500">S'inscrire</a></p>
