@@ -4,7 +4,7 @@
         <span class="font-extrabold text-orange-400 ml-2">Tchop<span class="text-gray-300">Et</span>Yamo</span>
     </a>
     <ul class="flex flex-col items-start text-xl my-5 pl-5">
-        <li class="max-w-fit border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class=" hover:ml-7" href=""><i class="fa-solid fa-house"></i> Accueil</li></a>
+        <li class="max-w-fit border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class=" hover:ml-7" href="{{route('welcome')}}"><i class="fa-solid fa-house"></i> Accueil</li></a>
         <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class=" hover:ml-7" href=""><i class="fas fa-server"></i> Tableau de bord</li></a>
         <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class=" hover:ml-7" href="{{route('recettes.index')}}"><i class="fa-solid fa-concierge-bell"></i> Recettes</li></a>
         <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class=" hover:ml-7" href="{{route('categories.index')}}"><i class="fa-solid fa-calendar-alt"></i> Catégories</li></a>

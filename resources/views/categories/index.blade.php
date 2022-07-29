@@ -7,14 +7,14 @@
         Catégories
     </h1>
     @isAdmin
-        <a class="bg-green-400 text-bold text-xl border rounded-md cursor-pointer" href="{{route('categories.create')}}">
+        <a class="bg-green-400 text-bold text-xl w-56 font-bold hover:bg-green-500 m-1 text-white p-2 border rounded-md cursor-pointer" href="{{route('categories.create')}}">
             Ajouter une catégorie
         </a>
     @endisAdmin
     <div class="min-h-screen">
         @forelse ($categories as $categorie)
             <section class="my-2">
-                <a href="#" class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100"><span>Recettes les plus populaires</span><span>Voir plus</span></a>
+                <a href="#" class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100"><span>{{$categorie->name}}</span><span>Voir plus</span></a>
                 <div>
                     @forelse ($categorie->recettes as $recette)
                         

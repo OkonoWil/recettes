@@ -6,7 +6,7 @@
     <h1 class="text-3xl text-orange-500 font-extrabold @isAdmin my-2 @else mt-20 mb-4 @endisAdmin ">
         Recettes
     </h1>
-    <a class="bg-green-400 text-bold text-xl w-52 font-bold hover:bg-green-500 hover:translate-y-2 m-1 text-white p-2 border rounded-md cursor-pointer" href="{{route('recettes.create')}}">
+    <a class="bg-green-400 text-bold text-xl w-52 font-bold hover:bg-green-500 m-1 text-white p-2 border rounded-md cursor-pointer" href="{{route('recettes.create')}}">
         Ajouter une recette
     </a>
     <div class="min-h-screen mx-2 my-1">

@@ -32,8 +32,8 @@
             </div>    
         @else
             <div class="flex flex-col box-border px-14 w-screen ">
-            {{-- --}}
-            @section('sidebar')
+                {{-- --}}
+                @section('sidebar')
                     @include('partials.header')
                 @show
 
