@@ -3,15 +3,15 @@
 @section('title', 'Ajouter-Recette')
 
 @section('content')
-    <h1 class="text-3xl text-orange-500 font-extrabold @isAdmin my-2 @else mt-20 mb-4 @endisAdmin ">
-        Ajouter une recette
+<h1 class="text-3xl text-orange-500 font-extrabold @isAdmin my-2 @else mt-20 mb-4 @endisAdmin ">
+    Ajouter une recette
     </h1>
-    <form action="{{route('recettes.store')}}" method="POST" enctype="multipart/form-data" class="flex flex-col items-center">
+    <form action="{{route('recettes.store')}}" method="POST" enctype="multipart/form-data" class="text-base text-gray-600 flex flex-col items-center">
         @csrf
 
 
         {{-- ----------- Name & image ----------- --}}
-        <div class="flex flex-row box-border p-2 border-2 border-gray-400 mb-2 text-base max-w-3xl">
+        <div class="flex flex-row box-border p-2 border-2 border-gray-400 mb-2 max-w-3xl">
             <div class="w-96 flex flex-col m-1 box-border">
                 <div>
                     <label for="name">Nom de la recette :</label>
@@ -19,7 +19,7 @@
                     <span class="text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <input class="focus:outline border-2 rounded-md @error('name') border-red-400 @else border-gray-500  @enderror" type="text" name="name" id="name" value="{{old('name')}}" placeholder="Entrez le nom de la recette">
+                <input class="focus:ring-0 focus:border-transparent focus:outline border-2 rounded-md @error('name') border-red-400 @else border-gray-500  @enderror" type="text" name="name" id="name" value="{{old('name')}}" placeholder="Entrez le nom de la recette">
             </div>
             <div class="w-96 flex flex-col m-1 box-border">
                 <div>
@@ -66,54 +66,44 @@
             <div class="flex flex-col m-2">
                 <div>
                     <label>Ingrédients :</label>
-                    @error('ingredient')
+                    @error('ingredients')
                     <span class="text-sm text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <div class="flex flex-row flex-wrap p-1 my-1 mx-2">
-                    <input type="text" name="" id="" class=" p-1 my-1 mx-2">
-                    <input type="text" name="" id="" class=" p-1 my-1 mx-2">
-                    <input type="text" name="" id="" class=" p-1 my-1 mx-2">
-                    <input type="text" name="" id="" class=" p-1 my-1 mx-2">
-                    <input type="text" name="" id="" class=" p-1 my-1 mx-2">
-                    <input type="text" name="" id="" class=" p-1 my-1 mx-2">
-                    <input type="text" name="" id="" class=" p-1 my-1 mx-2">
-                    <input type="text" name="" id="" class=" p-1 my-1 mx-2">
-                    <input type="text" name="" id="" class=" p-1 my-1 mx-2">
+                <div id="ingredients" class="flex flex-row flex-wrap p-1 my-1 mx-2 justify-evenly">
+                    <input type="text" name="ingredients[]" id="" class="focus:ring-0 focus:border-transparent focus:outline border-2 rounded-md border-gray-500 p-1 my-1 mx-2">
+                </div>
+                <div class="flex flex-row justify-end">
+                    <span id="btnIng" class="cursor-pointer bg-green-400 border-2 border-green-700 rounded-xl text-white font-bold p-2 m-2">Ajouter un ingrédient</span>
                 </div>
             </div>
         
         </div>  
 
-            <div class="w-1/2 flex flex-col m-1 text-xl">
+
+        {{-- ----------- Cook ----------- --}}
+        <div class="border-2 border-gray-400 m-2 max-w-3xl box-border p-2 ">
+            <div class="flex flex-col m-2">
                 <div>
-                    <label for="quantity">Quantity :</label>
-                    @error('quantity')
+                    <label>Etape de préparation :</label>
+                    @error('preparation')
                     <span class="text-sm text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <input class="border-2 rounded-md @error('quantity') border-red-400 @else border-gray-500 @enderror" type="text" name="quantity" value="{{old('quantity')}}">
-            </div>
-            <div class="w-1/2 flex flex-col m-1 text-xl">
-                <label for="stock_min">Stock min :</label>
-                <input class="border-2 rounded-md border-teal-500" type="text" name="stock_min" value="{{old('stock_min')}}">
-            </div>
-            <div class="w-1/2 flex flex-col m-1 text-xl">
-                <div>
-                    <label for="providor">Providor :</label>
-                    @error('providor')
-                    <span class="text-sm text-red-500">{{$message}}</span>
-                    @enderror
+                <div id="preparations" class="flex flex-row flex-wrap p-1 my-1 mx-2 justify-evenly">
+                    <input type="text" name="preparation[]" id="" class="focus:ring-0 focus:border-transparent focus:outline border-2 rounded-md border-gray-500 p-1 my-1 mx-2">
                 </div>
-                <input class="border-2 rounded-md  @error('providor') border-red-400 @else border-gray-500 @enderror" type="text" name="providor" value="{{old('providor')}}">
+                <div class="flex flex-row justify-end">
+                    <span id="btnPrepa" class="cursor-pointer bg-green-400 border-2 border-green-700 rounded-xl text-white font-bold p-2 m-2">Ajouter une étape </span>
+                </div>
             </div>
-            <div class="w-1/2 flex flex-col m-1 text-xl">
-                <label for="description">description :</label>
-                <input class="border-2 rounded-md border-gray-500" type="text" name="description" value="{{old('description')}}">
-            </div>
-            <div class="flex justify-end w-1/2 m-2">
-                <div class="bg-teal-500 m-3 mr-0 p-2 text-2xl text-white font-bold border rounded-md w-1/2 text-center"><input  class="w-full cursor-pointer" type="submit" value="ADD"></div>
+        
+        </div>  
+
+            
+            <div class="flex justify-center w-1/2 m-2">
+                <div class="bg-green-500 m-3 mr-0 p-2 text-2xl text-white font-bold border rounded-md w-52 text-center"><input  class="w-full cursor-pointer" type="submit" value="ADD"></div>
             </div>
     </form>
-
+    <script src="/js/create_recette.js"></script>
 @endsection
