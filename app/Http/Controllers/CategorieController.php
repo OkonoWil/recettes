@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categorie;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CategorieController extends Controller
 {
@@ -15,7 +16,11 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        //
+        if (Auth::user()->admin) {
+            return view('');
+        } else {
+            return view('');
+        }
     }
 
     /**

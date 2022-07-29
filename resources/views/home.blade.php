@@ -3,8 +3,28 @@
 @section('title', 'Home')
 
 @section('content')
+<h1 class="text-3xl text-orange-500 font-extrabold m-5">
+    Home
+</h1>
+<section class="my-2">
+    <a href="#" class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100"><span>Recettes les plus populaires</span><span>Voir plus</span></a>
+    <div>
+        @forelse ($recettes as $recette)
+            
+        @empty
+            <p>Aucune recette</p>
+        @endforelse
+    </div>
+</section>
+<section class="mt-2 mb-4">
+    <a href="#" class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100"><span>Recettes les plus récentes</span><span>Voir plus</span></a>
+    <div>
+        @forelse ($recettes as $recette)
+            
+        @empty
+            <p>Aucune recette</p>
+        @endforelse
+    </div>
+</section>
 
-<p>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. A nulla vero totam odit? Officiis dolores aperiam voluptate nisi iste voluptas explicabo, placeat suscipit ea vitae eius consectetur obcaecati id quia cumque consequuntur? Ea, officia alias ipsum optio dignissimos accusantium nisi? Minus necessitatibus earum nam asperiores debitis facere aut incidunt. Accusantium, assumenda vero sed perferendis aspernatur esse ipsum voluptatibus ex, dolorem commodi mollitia? Ipsa porro voluptates facere maxime doloremque consequatur culpa mollitia cum harum. Vel fuga voluptate rem excepturi sapiente labore consectetur. At, quos, iusto possimus omnis sequi ipsa doloribus corporis id placeat quo quaerat! Neque vero deserunt possimus quasi, hic molestiae nesciunt illo accusamus placeat unde repellendus praesentium quo eos nulla. Iure, ipsa temporibus ipsum nihil ea quidem, sequi repellat numquam inventore aspernatur similique necessitatibus. Nisi aperiam itaque omnis. Tempore dolor temporibus reiciendis accusantium harum iure repellat quasi animi. Fugit, laboriosam at autem ea omnis, error ipsam fuga quam ullam, excepturi id modi minima optio facere sequi neque unde! Obcaecati recusandae aut commodi, enim omnis ipsam. Aut expedita enim doloribus optio error eum quasi praesentium at numquam laudantium sit soluta blanditiis, laboriosam sapiente, sint saepe asperiores mollitia voluptates deserunt nulla! Aperiam, fugiat sed! Ullam officia repellendus, magnam odit exercitationem ab cupiditate quo eius voluptas cum recusandae tempore sint debitis culpa animi nihil. Sint error non vero ipsa aspernatur incidunt eius quibusdam earum hic dicta, nam tempora adipisci quam? Ipsa iure provident magnam laborum pariatur illum impedit dolor nesciunt, veniam reprehenderit, numquam corrupti quas consequuntur accusantium soluta praesentium distinctio? Praesentium, error dolor. Repellat minima facilis, quisquam cum, eveniet dolore delectus quibusdam reiciendis autem sed soluta. Eveniet officiis earum neque eaque optio expedita quia dolores veniam beatae qui aliquid esse voluptatum, quos suscipit nobis magni natus iure ea velit odio ducimus similique quas? Neque excepturi facere atque dolore eius placeat ipsam impedit!
-</p>
 @endsection

@@ -11,7 +11,7 @@
 <body class="h-screen w-screen text-base flex justify-center">
     <div class="container flex flex-col items-center w-2/3 h-full text-gray-500">
         <a href="{{route('home')}}" class="flex flex-row justify-center text-3xl my-5">
-            <img src="./icon/tcho_et_yamo.png" alt="Tcop et Yamo">
+            <img src="{{Storage::url('icon/tchop_et_yamo.png')}}" alt="Tcop et Yamo">
             <span class="font-extrabold text-orange-400 ml-2">Tchop<span class="text-gray-300">Et</span>Yamo</span>
         </a>
         @yield('content')

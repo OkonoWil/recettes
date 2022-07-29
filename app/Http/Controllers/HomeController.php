@@ -14,6 +14,7 @@ class HomeController extends Controller
     }
     function home()
     {
-        return view('home');
+        $recettes = Recette::all()->sortBy('created_at');
+        return view('home', ['recettes' => $recettes]);
     }
 }

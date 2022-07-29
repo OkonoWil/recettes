@@ -1,7 +1,7 @@
 <header class="fixed flex flex-row box-border justify-between pt-2 w-full bg-gray-50 top-0 left-0">
     <div class="flex flex-row my-1">
         <div class="mx-2">
-            <i class="fa-solid fa-bars text-2xl cursor-pointer"></i>
+            <i class="fa-solid fa-bars text-2xl cursor-pointer" title="Menu"></i>
         </div>
         <div>
             
