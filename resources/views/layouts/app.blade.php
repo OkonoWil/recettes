@@ -20,7 +20,7 @@
                 @show
 
                 {{-- --}}
-                <div class="box-border ml-72 bg-gray-100 pt-3 pr-4 min-h-full">
+                <div class="box-border flex flex-col ml-72 bg-gray-100 pt-3 pr-4 min-h-full">
 
                     @section('connexionBar')
                         @include('partials.connexionBar')

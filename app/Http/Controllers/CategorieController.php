@@ -16,11 +16,8 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        if (Auth::user()->admin) {
-            return view('');
-        } else {
-            return view('');
-        }
+        $categories = Categorie::all();
+        return view('categories.index', ['categories' => $categories]);
     }
 
     /**
@@ -30,7 +27,7 @@ class CategorieController extends Controller
      */
     public function create()
     {
-        //
+        return view('recettes.create');
     }
 
     /**

@@ -11,9 +11,20 @@ class Recette extends Model
 
     protected $fillable = [
         'name',
-        'username',
-        'sexe',
-        'email',
-        'password',
+        'image',
+        'ingredients',
+        'preparation',
+        'categorie_id',
     ];
+
+    public function categorie()
+    {
+        return $this->belongsTo(Categorie::class);
+    }
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

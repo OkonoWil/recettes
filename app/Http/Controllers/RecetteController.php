@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Recette;
-use App\Http\Controllers\Controller;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class RecetteController extends Controller
 {
@@ -15,7 +16,8 @@ class RecetteController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Categorie::all();
+        return view('recettes.index', ['categories' => $categories]);
     }
 
     /**
@@ -25,7 +27,7 @@ class RecetteController extends Controller
      */
     public function create()
     {
-        //
+        return view('recettes.create');
     }
 
     /**
