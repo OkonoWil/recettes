@@ -12,9 +12,10 @@ class Recette extends Model
     protected $fillable = [
         'name',
         'image',
+        'categorie_id',
+        'other_categorie',
         'ingredients',
         'preparation',
-        'categorie_id',
     ];
 
     public function categorie()

@@ -16,8 +16,8 @@ class RecetteController extends Controller
      */
     public function index()
     {
-        $categories = Categorie::all();
-        return view('recettes.index', ['categories' => $categories]);
+        $recettes = Recette::all();
+        return view('recettes.index', ['recettes' => $recettes]);
     }
 
     /**
@@ -27,7 +27,8 @@ class RecetteController extends Controller
      */
     public function create()
     {
-        return view('recettes.create');
+        $categories = Categorie::all();
+        return view('recettes.create', ['categories' => $categories]);
     }
 
     /**
