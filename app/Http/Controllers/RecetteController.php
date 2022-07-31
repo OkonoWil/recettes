@@ -39,17 +39,26 @@ class RecetteController extends Controller
      */
     public function store(Request $request)
     {
-        $ingredients = serialize($request->ingredients);
-        $preparation = serialize($request->preparation);
+
         $this->validate($request, [
             'name' => ['required', 'unique:recettes,name'],
             'image' => ['required'],
             'categorie_id' => ['required'],
         ]);
+
+        $ingredients = serialize($request->ingredients);
+        $preparation = serialize($request->preparation);
+        $filename = 'recette' . time() . 'user' . $request->user()->id . '.' . $request->image->extension();
+        $path = $request->image->storeAs(
+            'images/recettes',
+            $filename,
+            'public'
+        );
+
         Recette::create([
             'name' => $request->name,
             'categorie_id' => $request->categorie_id == 0 ? 1 : $request->categorie_id,
-            'image' => $request->image,
+            'image' => $path,
             'preparation' => $preparation,
             'ingredients' => $ingredients,
             'other_categorie' => $request->categorie_id == 0 ? $request->other_categorie : "",

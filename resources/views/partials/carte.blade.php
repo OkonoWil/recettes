@@ -1,11 +1,11 @@
-<div>
+<div class="min-w-12 flex flex-row">
     <div>
 
     </div>
-    <div>
+    <div class="">
 
     </div>
-    <div>
-        
+    <div class="fixe">
+
     </div>
 </div>
