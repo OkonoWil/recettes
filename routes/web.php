@@ -41,6 +41,8 @@ Route::middleware('admin')->group(function () {
 ////***************************ROUTE-only-user_auth******************************/
 Route::middleware('auth')->group(function () {
     route::get('/logout', [UserController::class, 'logout'])->name('auth.logout');
+    Route::post('/recettes', [RecetteController::class, 'store'])->name('recettes.store');
+    Route::get('/recettes/create', [RecetteController::class, 'create'])->name('recettes.create');
 });
 
 
@@ -55,8 +57,6 @@ route::get('/login', [UserController::class, 'getLogin'])->name('getlogin');
 
 
 Route::get('/recettes', [RecetteController::class, 'index'])->name('recettes.index');
-Route::get('/recettes/create', [RecetteController::class, 'create'])->name('recettes.create');
-Route::post('/recettes', [RecetteController::class, 'store'])->name('recettes.store');
 Route::get('/recettes/{id}', [RecetteController::class, 'index'])->name('recettes.show');
 Route::get('/recettes/{id}/edit', [RecetteController::class, 'index'])->name('recettes.edit');
 Route::put('/recettes/{id}', [RecetteController::class, 'index'])->name('recettes.update');

@@ -28,7 +28,7 @@
                     <span class="text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <input class="border-2 rounded-md @error('characteristic') border-red-400 @else border-gray-500  @enderror" type="file" name="image" id="image"  value="{{old('characteristic')}}"  placeholder="Sélectionnez une photo pour la recette">
+                <input class="border-2 rounded-md @error('characteristic') border-red-400 @else border-gray-500  @enderror" type="file" name="image" id="image" placeholder="Sélectionnez une photo pour la recette" accept="image/png, image/jpeg">
             </div>
         </div>
         
