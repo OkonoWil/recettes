@@ -17,7 +17,7 @@
                 <a href="#" class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100"><span>{{$categorie->name}}</span><span>Voir plus</span></a>
                 <div>
                     @forelse ($categorie->recettes as $recette)
-                        
+                        @include('partials.carte')           
                     @empty
                         <p>Aucune recette</p>
                     @endforelse

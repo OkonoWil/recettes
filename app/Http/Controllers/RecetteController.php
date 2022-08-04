@@ -57,12 +57,15 @@ class RecetteController extends Controller
 
         Recette::create([
             'name' => $request->name,
+            'user_id' => $request->user()->id,
             'categorie_id' => $request->categorie_id == 0 ? 1 : $request->categorie_id,
             'image' => $path,
             'preparation' => $preparation,
             'ingredients' => $ingredients,
             'other_categorie' => $request->categorie_id == 0 ? $request->other_categorie : "",
         ]);
+
+        return view('recettes.create');
     }
 
     /**

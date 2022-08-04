@@ -12,10 +12,12 @@ class Recette extends Model
     protected $fillable = [
         'name',
         'image',
+        'user_id',
         'categorie_id',
         'other_categorie',
         'ingredients',
         'preparation',
+        'duree'
     ];
 
     public function categorie()
@@ -27,5 +29,10 @@ class Recette extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function commentes()
+    {
+        return $this->hasMany(Commente::class);
     }
 }

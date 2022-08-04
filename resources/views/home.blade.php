@@ -10,7 +10,7 @@
     <a href="#" class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100"><span>Recettes les plus populaires</span><span>Voir plus</span></a>
     <div>
         @forelse ($recettes as $recette)
-            
+            @include('partials.carte')
         @empty
             <p>Aucune recette</p>
         @endforelse
@@ -20,7 +20,7 @@
     <a href="#" class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100"><span>Recettes les plus récentes</span><span>Voir plus</span></a>
     <div>
         @forelse ($recettes as $recette)
-            
+            @include('partials.carte')
         @empty
             <p>Aucune recette</p>
         @endforelse

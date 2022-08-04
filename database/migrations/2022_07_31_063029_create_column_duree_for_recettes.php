@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('recettes', function (Blueprint $table) {
-            $table->time('duree');
+            $table->time('duree')->default(0);
         });
     }
 
