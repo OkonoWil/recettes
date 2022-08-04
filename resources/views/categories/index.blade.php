@@ -14,7 +14,27 @@
     <div class="min-h-screen">
         @forelse ($categories as $categorie)
             <section class="my-2">
-                <a href="#" class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100"><span>{{$categorie->name}}</span><span>Voir plus</span></a>
+                @isAdmin
+                    <div class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100">
+                        <span>{{$categorie->name}}</span>
+                        <span>
+                            <a  href="{{route('categories.show', ['categorie' => $categorie])}}" class="px-2 py-1 rounded-md hover:text-white hover:bg-orange-500">Voir plus</a>
+                            <a href="{{route('categories.edit', ['categorie' => $categorie])}}" class="text-green-500 px-2 py-1 rounded-md hover:text-white hover:bg-green-500">Modifier</a>
+                            <form action="" method="post" class="inline">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="Supprimer" class="text-red-400 px-2 py-1 rounded-md hover:text-white hover:bg-red-400">
+                            </form>
+                        </span>
+                    </div>
+                    @else
+                    <div class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100">
+                        <span>{{$categorie->name}}</span>
+                        <span>
+                            <a  href="{{route('categories.show', ['categorie' => $categorie])}}" class="px-2 py-1 rounded-md hover:text-white hover:bg-orange-500">Voir plus</a>
+                        </span>
+                    </div>
+                @endisAdmin
                 <div>
                     @forelse ($categorie->recettes as $recette)
                         @include('partials.carte')           

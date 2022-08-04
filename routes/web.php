@@ -65,7 +65,7 @@ Route::delete('/recettes/{id}', [RecetteController::class, 'index'])->name('rece
 Route::get('/categories', [CategorieController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [CategorieController::class, 'create'])->name('categories.create');
 Route::post('/categories', [CategorieController::class, 'store'])->name('categories.store');
-Route::get('/categories/{id}', [CategorieController::class, 'index'])->name('categories.show');
-Route::get('/categories/{id}/edit', [CategorieController::class, 'index'])->name('categories.edit');
-Route::put('/categories/{id}', [CategorieController::class, 'index'])->name('categories.update');
-Route::delete('/categories/{id}', [CategorieController::class, 'index'])->name('categories.delete');
+Route::get('/categories/{categorie}', [CategorieController::class, 'show'])->name('categories.show');
+Route::get('/categories/{categorie}/edit', [CategorieController::class, 'edit'])->name('categories.edit');
+Route::put('/categories/{categorie}', [CategorieController::class, 'update'])->name('categories.update');
+Route::delete('/categories/{categorie}', [CategorieController::class, 'destroy'])->name('categories.delete');

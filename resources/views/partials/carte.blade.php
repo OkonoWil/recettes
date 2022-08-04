@@ -1,4 +1,4 @@
-<div class="-z-50 m-2 bg-orange-100 text-gray-600  min-w-12 flex flex-col w-1/4 overflow-hidden shadow-sm rounded-md relative">
+<div class="z-0 m-2 bg-orange-100 text-gray-600  min-w-12 flex flex-col w-1/4 overflow-hidden shadow-sm rounded-md relative">
     <img class="w-full h-36 object-cover" src="{{Storage::url($recette->image)}}" alt="{{$recette->name}}">
     <div class="mx-2 my-1">
         <div class="font-bold">{{$recette->name}}</div>

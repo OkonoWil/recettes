@@ -64,7 +64,7 @@ class CategorieController extends Controller
      */
     public function edit(Categorie $categorie)
     {
-        //
+        return view('categories.edit', ['categorie' => $categorie]);
     }
 
     /**

@@ -1,4 +1,4 @@
-<header class="fixed flex flex-row box-border justify-between pt-2 w-full bg-gray-50 top-0 left-0">
+<header class="z-10 fixed flex flex-row box-border justify-between pt-2 w-full bg-gray-50 top-0 left-0">
     <div class="flex flex-row my-1">
         <nav>
             @include('partials.menu')
