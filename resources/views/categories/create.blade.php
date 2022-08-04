@@ -3,10 +3,10 @@
 @section('title', 'Ajouter-Recette')
 
 @section('content')
-    <h1 class="text-3xl text-orange-500 font-extrabold @isAdmin my-2 @else mt-20 mb-4 @endisAdmin ">
+    <h1 class="text-3xl text-orange-500 font-extrabold my-2 ">
         Ajouter une categorie
     </h1>
-    <form action="{{route('categories.store')}}" method="POST" class="border-gray-500 border-2 box-border rounded-lg p-4 m-4 mb-40 w-96">
+    <form action="{{route('categories.store')}}" method="POST" class="border-gray-500 border-2 box-border rounded-lg p-4 m-5 mb-36 w-96">
         @csrf
         <div class="w-full flex flex-col">
             <div class="w-full flex flex-col m-1 text-xl box-border">
@@ -19,7 +19,7 @@
                 @enderror
             </div>
             
-            <div class="flex justify-end w-full m-2">
+            <div class="flex justify-end w-full">
                 <div class="bg-teal-500 m-3 mr-0 p-2 text-2xl text-white font-bold border rounded-md w-1/2 text-center"><input  class="w-full cursor-pointer" type="submit" value="ADD"></div>
             </div>
         </div>
