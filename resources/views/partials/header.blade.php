@@ -1,8 +1,12 @@
 <header class="fixed flex flex-row box-border justify-between pt-2 w-full bg-gray-50 top-0 left-0">
     <div class="flex flex-row my-1">
-        <div class="mx-2">
-            <i class="fa-solid fa-bars text-2xl cursor-pointer" title="Menu"></i>
-        </div>
+        <nav>
+            @include('partials.menu')
+            <div class="mx-2 toggle">
+                <i class="fa-solid fa-bars text-2xl cursor-pointer ouvrir" title="Menu"></i>
+                <i class="fa-solid fa-xmark fermer text-2xl cursor-pointer fermer" title="Fermer"></i>
+            </div>
+        </nav>
         <div>
             
             <a href="{{route('home')}}" class="flex flex-row justify-center text-2xl">
@@ -22,4 +26,5 @@
     <div>
         @include('partials.connexionBar')
     </div>
+    <script src="/js/btn_menu.js"></script>
 </header>

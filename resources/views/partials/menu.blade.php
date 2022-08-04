@@ -1,0 +1,8 @@
+<ul class="text-xl text-white fixed top-0 left-0 w-96 pl-8 py-5 bg-gray-700 bg-opacity-60 -translate-x-full menu">
+    <li class="max-w-fit border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class=" hover:ml-7" href="{{route('welcome')}}"><i class="fa-solid fa-house"></i> Accueil</li></a>
+    <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class=" hover:ml-7" href="{{route('recettes.index')}}"><i class="fa-solid fa-concierge-bell"></i> Recettes</li></a>
+    <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class=" hover:ml-7" href="{{route('categories.index')}}"><i class="fa-solid fa-calendar-alt"></i> Catégories</li></a>
+    <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class=" hover:ml-7" href="{{route('recettes.create')}}"><i class="fa-solid fa-utensils"></i> Ajouter une recette</a></li>
+    <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class=" hover:ml-7" href=""><i class="fa-solid fa-question-circle"></i> A propos</a></li>
+    <li class="max-w-fit mt-4 border-b-2 border-b-gray-400 hover:text-orange-400 hover:border-b-orange-400"><a class=" hover:ml-7" href=""><i class="fa-solid fa-address-card"></i> Contact</a></li>
+</ul>

@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+nav .toggle {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    width: 35px;
+    position: relative;
+    z-index: 20;
+}
+.open nav .toggle{
+    color: white;
+    margin-left: 300px;
+    position: absolute;
+}
+nav .toggle .ouvrir {
+    display: block;
+}
+nav .toggle .fermer {
+    display: none;
+}
+.open nav .toggle .ouvrir {
+    display: none;
+}
+.open nav .toggle .fermer {
+    display: block;
+}
+.open nav .menu {
+    transform: translateX(0);
+    z-index: 10;
+  }
