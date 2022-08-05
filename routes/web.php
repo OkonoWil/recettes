@@ -62,6 +62,8 @@ Route::get('/recettes/{id}/edit', [RecetteController::class, 'index'])->name('re
 Route::put('/recettes/{id}', [RecetteController::class, 'index'])->name('recettes.update');
 Route::delete('/recettes/{id}', [RecetteController::class, 'index'])->name('recettes.delete');
 
+
+
 Route::get('/categories', [CategorieController::class, 'index'])->name('categories.index');
 Route::get('/categories/create', [CategorieController::class, 'create'])->name('categories.create');
 Route::post('/categories', [CategorieController::class, 'store'])->name('categories.store');

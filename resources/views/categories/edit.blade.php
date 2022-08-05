@@ -19,7 +19,7 @@
             <div>
                 <label for="name">Nom de la catégorie :</label>
             </div>
-            <input class="m-1 box-border border-2 rounded-md focus:outline-teal-400 @error('name') border-red-400 @else border-gray-500  @enderror" type="text" name="name" value="{{$categorie->name}}">
+            <input class="m-1 box-border border-2 rounded-md focus:outline-teal-400 @error('name') border-red-400 @else border-gray-500  @enderror" type="text" name="name" value="{{old('name')??$categorie->name}}">
             @error('name')
                 <span class="text-sm text-red-500">{{$message}}</span>
             @enderror

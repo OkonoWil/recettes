@@ -65,7 +65,7 @@ class RecetteController extends Controller
             'other_categorie' => $request->categorie_id == 0 ? $request->other_categorie : "",
         ]);
 
-        return view('recettes.create');
+        return redirect()->route('recettes.create');
     }
 
     /**

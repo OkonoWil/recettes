@@ -76,7 +76,15 @@ class CategorieController extends Controller
      */
     public function update(Request $request, Categorie $categorie)
     {
-        //
+        $this->validate($request, [
+            'name' => ['required', 'unique:Categories,name,' . $categorie->id]
+        ]);
+        $categorie->name = $request->name;
+        $categorie->updated_at = now();
+        $categorie->save();
+
+        $categories = Categorie::all();
+        return redirect()->route('categories.index', ['categories' => $categories]);
     }
 
     /**

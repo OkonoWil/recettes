@@ -35,7 +35,7 @@
                         </span>
                     </div>
                 @endisAdmin
-                <div>
+                <div class="grid grid-cols-4 gap-5">
                     @forelse ($categorie->recettes as $recette)
                         @include('partials.carte')           
                     @empty

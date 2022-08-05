@@ -60,6 +60,25 @@
             </div>
         </div>
         
+
+
+        {{-- ----------- Durée ----------- --}}
+        <div class=" flex flex-row border-2 border-gray-400 m-2 max-w-3xl box-border p-2 ">
+            <div class="w-96 flex flex-col m-2">
+                <div>
+                    <label>Durée :</label>
+                    @error('categorie_id')
+                    <span class="text-red-500">{{$message}}</span>
+                    @enderror
+                </div>
+                <div id="duree" class="flex flex-row flex-wrap p-1 my-1 mx-2 justify-evenly">
+                    <input type="time" name="duree" id="duree" class="focus:ring-0 focus:border-transparent focus:outline border-2 rounded-md border-gray-500 p-1 my-1 mx-2">
+                </div>
+            </div>
+            <div class="w-96 flex flex-col m-2">
+                
+            </div>
+        </div>
         
         {{-- ----------- Ingredients ----------- --}}
         <div class="border-2 border-gray-400 m-2 max-w-3xl box-border p-2 ">
