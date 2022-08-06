@@ -36,7 +36,7 @@
                     </div>
                 @endisAdmin
                 <div class="grid grid-cols-4 gap-5">
-                    @forelse ($categorie->recettes->sortBy('name')->take(4) as $recette)
+                    @forelse ($categorie->recettes->count()>=4 ? $categorie->recettes->random(4) : $categorie->recettes->sortBy('name')->take(4) as $recette)
                         @include('partials.carte')           
                     @empty
                         <p>Aucune recette</p>
@@ -46,8 +46,9 @@
         @empty
             <p>Aucune catégorie</p>
         @endforelse
-        <div>
-            {{$categories->links()}}
+        <div class="flex self-center">
+
+            {{$categories->links('pagination::simple-tailwind')}}
         </div>
     </div>
 @endsection
