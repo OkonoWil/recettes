@@ -14,7 +14,7 @@
 <section class="my-2">
     <a href="#" class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100"><span>Recettes les plus populaires</span><span>Voir plus</span></a>
     <div class="grid grid-cols-4 gap-5">
-        @forelse ($recettes as $recette)
+        @forelse ($populaires as $recette)
             @include('partials.carte')
         @empty
             <p>Aucune recette</p>
@@ -24,7 +24,7 @@
 <section class="mt-2 mb-4">
     <a href="#" class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100"><span>Recettes les plus récentes</span><span>Voir plus</span></a>
     <div class="grid grid-cols-4 gap-5">
-        @forelse ($recettes as $recette)
+        @forelse ($recentes as $recette)
             @include('partials.carte')
         @empty
             <p>Aucune recette</p>

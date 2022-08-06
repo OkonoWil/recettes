@@ -9,12 +9,14 @@ class HomeController extends Controller
 {
     function welcome()
     {
-        $recettes = Recette::all()->sortBy('created_at');
-        return view('welcome', ['recettes' => $recettes]);
+        $recettes1 = Recette::all()->sortByDesc('created_at')->take(4);
+        $recettes2 = Recette::all()->sortByDesc('vue')->take(4);
+        return view('welcome', ['recentes' => $recettes1, 'populaires' => $recettes2]);
     }
     function home()
     {
-        $recettes = Recette::all()->sortBy('created_at');
-        return view('home', ['recettes' => $recettes]);
+        $recettes1 = Recette::all()->sortByDesc('created_at')->take(4);
+        $recettes2 = Recette::all()->sortByDesc('vue')->take(4);
+        return view('home', ['recentes' => $recettes1, 'populaires' => $recettes2]);
     }
 }
