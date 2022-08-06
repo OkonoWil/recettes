@@ -16,7 +16,7 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        $categories = Categorie::orderBy('name')->paginate(2);
+        $categories = Categorie::orderBy('name')->paginate(3);
 
         return view('categories.index', ['categories' => $categories]);
     }
@@ -96,6 +96,7 @@ class CategorieController extends Controller
      */
     public function destroy(Categorie $categorie)
     {
-        //
+        Categorie::findOrFail($categorie->id)->delete();
+        return redirect()->route('categories.index');
     }
 }
