@@ -12,6 +12,9 @@
                         <a class="hover:font-extrabold hover:text-orange-500" href="#">Profil</a>
                     </li>
                     <li>
+                        <a class="hover:font-extrabold hover:text-orange-500" href="#">Paramètre</a>
+                    </li>
+                    <li>
                         <a class="hover:font-extrabold hover:text-orange-500" href="{{route('auth.logout')}}">Déconnecter</a>
                     </li>
                 </ul>

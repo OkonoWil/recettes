@@ -16,8 +16,13 @@ return new class extends Migration
         Schema::create('commentes', function (Blueprint $table) {
             $table->id();
             $table->string('contenu');
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('recette_id')->constrained('recettes');
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->onUpdate('cascade');
+            $table->foreignId('recette_id')
+                ->constrained('recettes')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

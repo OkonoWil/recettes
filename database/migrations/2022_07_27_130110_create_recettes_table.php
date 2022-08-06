@@ -19,13 +19,14 @@ return new class extends Migration
             $table->string('image')->unique();
             $table->string('ingredients');
             $table->string('preparation');
+            $table->time('duree')->default(0);
+            $table->string('other_categorie')->nullable();
             $table->foreignId('user_id')
                 ->constrained('users')
                 ->onUpdate('cascade');
             $table->foreignId('categorie_id')
                 ->constrained('categories')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+                ->onUpdate('cascade');
             $table->boolean('validation')->default(0);
             $table->unsignedBigInteger('vue')->default(0);
             $table->timestamps();
