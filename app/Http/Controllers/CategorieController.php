@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Recette;
 use App\Models\Categorie;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -54,7 +55,10 @@ class CategorieController extends Controller
      */
     public function show(Categorie $categorie)
     {
-        //
+        $recettes = Recette::where('categorie_id', $categorie->id)
+            ->orderBy('name')
+            ->paginate(8);
+        return view('categories.show', ['categorie' => $categorie, 'recettes' => $recettes]);
     }
 
     /**

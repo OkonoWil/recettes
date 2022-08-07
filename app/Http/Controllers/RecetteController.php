@@ -44,7 +44,8 @@ class RecetteController extends Controller
         $this->validate($request, [
             'name' => ['required', 'unique:recettes,name'],
             'image' => ['required'],
-            'categorie_id' => ['required'],
+            'duree' => ['required'],
+            'categorie_id' => ['required']
         ]);
 
         $ingredients = serialize($request->ingredients);
@@ -61,6 +62,7 @@ class RecetteController extends Controller
             'user_id' => $request->user()->id,
             'categorie_id' => $request->categorie_id == 0 ? 1 : $request->categorie_id,
             'image' => $path,
+            'duree' => $request->duree,
             'preparation' => $preparation,
             'ingredients' => $ingredients,
             'other_categorie' => $request->categorie_id == 0 ? $request->other_categorie : "",
