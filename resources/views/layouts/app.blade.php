@@ -32,7 +32,7 @@
                 </div>    
             </div>    
         @else
-            <div class="flex flex-col box-border px-14 w-screen ">
+            <div class="flex flex-col box-border px-1 sm:px-14 w-screen ">
                 {{-- --}}
                 @section('sidebar')
                     @include('partials.header')
@@ -44,7 +44,7 @@
             </div>
         @endisAdmin
         
-        <footer class="px-5 flex justify-between h-20 text-white text-xl items-center bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-400">
+        <footer class="px-1 sm:px-5 flex flex-col sm:flex-row justify-center sm:justify-between h-20 text-white text-base sm:text-lg md:text-xl items-center bg-gradient-to-r from-orange-400 via-yellow-500 to-orange-400">
             <div>
                 <p>&copy; Copyright {{date('Y')}}. Okono Wilfried, développeur full stack</p>
             </div>

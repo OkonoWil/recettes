@@ -3,40 +3,40 @@
 @section('title', 'Contact')
 
 @section('content')
-    <h1 class="text-3xl text-orange-500 font-extrabold @isAdmin my-7 @else mt-20 mb-7 @endisAdmin ">
-        Contaxtez-nous !!!
+    <h1 class="text-3xl text-orange-500 font-extrabold @isAdmin mt-7 mb-2 sm:my-7 @else mt-20 mb-2 sm:mb-7 @endisAdmin ">
+        Contactez-nous !!!
     </h1>
-    
-    <form action="#" method="post">
-        <h1>Contactez-nous</h1>
-        <div class="separation"></div>
-        <div class="corps-formulaire">
-            <div class="gauche">
-                <div class="groupe">
-                    <label for="nom">Votre Prénom</label>
-                    <input type="text" autocomplete="off">
-                    <i class="fas fa-user"></i>
+    <div class="ok-min-h">
+        <form action="#" method="post" class=" px-1 sm:px-8  pb-5 w-[95vw] sm:w-[80vw] -z-20 lg:w-[70vw] box-border">
+            <div class="corps-formulaire flex flex-wrap flex-col sm:flex-row w-full">
+                <div class="gauche w-full sm:w-[45%]">
+                    <div class="groupe relative mt-5 flex flex-col">
+                        <label for="nom">Votre Prénom</label>
+                        <input type="text" autocomplete="off" class="mt-1 py-2 pl-7 pr-1 border border-orange-500 outline-orange-400">
+                        <i class="fas fa-user absolute l-0 top-8 p-2 text-orange-500"></i>
+                    </div>
+                    <div class="groupe relative mt-5 flex flex-col">
+                        <label for="email">Votre adresse e-mail</label>
+                        <input type="email" autocomplete="off" class="mt-1 py-2 pl-7 pr-1 border border-orange-500 outline-orange-400">
+                        <i class="fas fa-envelope absolute l-0 top-8 p-2 text-orange-500"></i>
+                    </div>
+                    <div class="groupe relative mt-5 flex flex-col">
+                        <label for="email">Votre téléphone</label>
+                        <input type="tel" autocomplete="off" class="mt-1 py-2 pl-7 pr-1 border border-orange-500 outline-orange-400">
+                        <i class="fas fa-mobile absolute l-0 top-8 p-2 text-orange-500"></i>
+                    </div>
                 </div>
-                <div class="groupe">
-                    <label for="email">Votre adresse e-mail</label>
-                    <input type="email" autocomplete="off">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="groupe">
-                    <label for="email">Votre téléphone</label>
-                    <input type="tel" autocomplete="off">
-                    <i class="fas fa-mobile"></i>
+                <div class="droite w-full sm:w-[45%] m-0 sm:ml-10">
+                    <div class="groupe relative mt-5 flex flex-col h-full">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" placeholder="Saisissez ici..." class="mt-1 p-2 border border-orange-500 resize-none h-[100px] sm:h-[80%] w-full outline-orange-400"></textarea>
+                    </div>
                 </div>
             </div>
-            <div class="droite">
-                <div class="groupe">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" placeholder="Saisissez ici..."></textarea>
-                </div>
+            <div class="pied-formulaire flex justify-center">
+                <input type="submit" value="Envoyer le message" class="mt-2 text-white bg-orange-500 cursor-pointer rounded-md py-2 px-5 outline-none transition-transform hover:scale-105">
             </div>
-        </div>
-        <div class="pied-formulaire">
-            <input type="submit" value="Envoyer le message">
-        </div>
-    </form>
+        </form>
+
+    </div>
 @endsection
