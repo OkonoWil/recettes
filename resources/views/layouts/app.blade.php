@@ -32,7 +32,7 @@
                 </div>    
             </div>    
         @else
-            <div class="flex flex-col box-border px-1 sm:px-14 w-screen ">
+            <div class="flex flex-col box-border px-1 sm:px-5 md:px-14 w-screen ">
                 {{-- --}}
                 @section('sidebar')
                     @include('partials.header')

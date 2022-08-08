@@ -30,7 +30,7 @@
                             @endisAdmin
                         </span>
                     </div>
-                <div class="grid grid-cols-4 gap-5">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 md:gap-3 lg:gap-5">
                     @forelse ($categorie->recettes->count()>=4 ? $categorie->recettes->random(4) : $categorie->recettes->sortBy('name')->take(4) as $recette)
                         @include('partials.carte')           
                     @empty

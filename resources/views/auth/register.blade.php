@@ -20,14 +20,14 @@
                 </div>
                 <input type="text" name="name" id="name" placeholder="Entrez votre nom" class="block p-1 sm:p-2.5 sm:mx-2 my-1 bg-gray-50 text-gray-600 w-full border border-gray-500 box-border rounded-md" value="{{old('name')}}">
             </div>
-            <div class="mr-1 sm:mr-0 sm:mx-5 w-full sm:w-1/2 box-border">
+            <div class="mr-1 sm:mx-5 w-full sm:w-1/2 box-border">
                 <div>
                     <label for="username">Pseudo :</label>
                     @error('username')
                     <span class="text-sm text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <input type="text" name="username" id="username" placeholder="Entrez votre pseudo" class="block p-1 sm:p-2.5 sm:mx-2 my-1 bg-gray-50 text-gray-600 w-full border border-gray-500 box-border rounded-md" value="{{old('username')}}">
+                <input type="text" name="username" id="username" placeholder="Entrez votre pseudo" class="block p-1 sm:p-2.5 sm:mr-1 my-1 bg-gray-50 text-gray-600 w-full border border-gray-500 box-border rounded-md" value="{{old('username')}}">
             </div>
         </div>
         <div class="m-1 flex flex-col sm:flex-row w-full box-border">
@@ -47,7 +47,7 @@
                     <span class="text-sm text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <div class="block p-1 sm:p-2.5 sm:mx-2 my-1 bg-gray-50 text-gray-600 w-full ">
+                <div class="block p-1 sm:p-2.5 sm:mr-1 my-1 bg-gray-50 text-gray-600 w-full ">
                     <input type="radio" name="sexe" id="homme" value="Homme">
                     <label>Homme </label>
                     <input type="radio" name="sexe" id="femme" value="Femme">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-        <div class="m-1 flex flex-col sm:flex-row w-full box-border">
+        <div class="mx-1  flex flex-col sm:flex-row w-full box-border">
             <div class="mr-1 sm:mr-5 w-full sm:w-1/2 box-border">
                 <div>
                     <label for="password">Mot de passe :</label>
@@ -65,14 +65,14 @@
                 </div>
                 <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe" class="block p-1 sm:p-2.5 sm:mx-2 my-1 bg-gray-50 text-gray-600 w-full border border-gray-500 box-border rounded-md" value="{{old('password')}}">
             </div>
-            <div class="mr-1 sm:mr-0 sm:mx-5 w-full sm:w-1/2 box-border">
+            <div class="mr-1 sm:mr-0 sm:mx-0 w-full sm:w-1/2 box-border">
                 <div>
                     <label for="passwordconf">Confirmez votre mot de passe</label>
                     @error('passwordconf')
                     <span class="text-sm text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <input type="password" name="passwordconf" id="passwordconf" placeholder="Confirmez votre mot de passe" class="block p-1 sm:p-2.5 sm:mx-2 my-1 bg-gray-50 text-gray-600 w-full border border-gray-500 box-border rounded-md" value="{{old('passwordconf')}}">
+                <input type="password" name="passwordconf" id="passwordconf" placeholder="Confirmez votre mot de passe" class="block p-1 sm:p-2.5 sm:mr-1 my-1 bg-gray-50 text-gray-600 w-full border border-gray-500 box-border rounded-md" value="{{old('passwordconf')}}">
             </div>
         </div>
         
