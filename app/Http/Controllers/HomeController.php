@@ -19,4 +19,17 @@ class HomeController extends Controller
         $recettes2 = Recette::all()->sortByDesc('vue')->take(4);
         return view('home', ['recentes' => $recettes1, 'populaires' => $recettes2]);
     }
+    function contact()
+    {
+        return view('home.contact');
+    }
+    function send(Request $request)
+    {
+        $this->validate($request, []);
+        return redirect()->route('home.contact');
+    }
+    function about()
+    {
+        return view('home.about');
+    }
 }

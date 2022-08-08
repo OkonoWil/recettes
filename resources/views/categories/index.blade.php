@@ -11,30 +11,25 @@
             Ajouter une catégorie
         </a>
     @endisAdmin
-    <div class="min-h-screen">
+    <div class="ok-min-h">
         @forelse ($categories as $categorie)
             <section class="my-2">
-                @isAdmin
                     <div class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100">
                         <span>{{$categorie->name}}</span>
                         <span>
-                            <a  href="{{route('categories.show', ['categorie' => $categorie])}}" class="px-2 py-1 rounded-md hover:text-white hover:bg-orange-500">Voir plus</a>
-                            <a href="{{route('categories.edit', ['categorie' => $categorie])}}" class="text-green-500 px-2 py-1 rounded-md hover:text-white hover:bg-green-500">Modifier</a>
-                            <form action="{{route('categories.delete',['categorie' => $categorie])}}" method="post" class="inline">
-                                @csrf
-                                @method('DELETE')
-                                <input type="submit" id="btn_delete" value="Supprimer" class="text-red-400 px-2 py-1 rounded-md hover:text-white hover:bg-red-400">
-                            </form>
+                            @if ($categorie->recettes->count()>4)
+                                <a  href="{{route('categories.show', ['categorie' => $categorie])}}" class="px-2 py-1 rounded-md hover:text-white hover:bg-orange-500">Voir plus</a>
+                            @endif
+                            @isAdmin
+                                <a href="{{route('categories.edit', ['categorie' => $categorie])}}" class="text-green-500 px-2 py-1 rounded-md hover:text-white hover:bg-green-500">Modifier</a>
+                                <form action="{{route('categories.delete',['categorie' => $categorie])}}" method="post" class="inline">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input type="submit" id="btn_delete" value="Supprimer" class="text-red-400 px-2 py-1 rounded-md hover:text-white hover:bg-red-400">
+                                </form>
+                            @endisAdmin
                         </span>
                     </div>
-                    @else
-                    <div class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100">
-                        <span>{{$categorie->name}}</span>
-                        <span>
-                            <a  href="{{route('categories.show', ['categorie' => $categorie])}}" class="px-2 py-1 rounded-md hover:text-white hover:bg-orange-500">Voir plus</a>
-                        </span>
-                    </div>
-                @endisAdmin
                 <div class="grid grid-cols-4 gap-5">
                     @forelse ($categorie->recettes->count()>=4 ? $categorie->recettes->random(4) : $categorie->recettes->sortBy('name')->take(4) as $recette)
                         @include('partials.carte')           

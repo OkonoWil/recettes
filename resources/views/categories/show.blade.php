@@ -7,7 +7,7 @@
         Catégorie - {{$categorie->name}}
     </h1>
     
-    <div class="min-h-screen">
+    <div class="ok-min-h">
        @empty($categorie->recettes)
             <p>Aucune catégorie</p>
        @else

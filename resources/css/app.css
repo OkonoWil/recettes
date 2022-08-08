@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.ok-min-h{
+    min-height: 400px;
+}
 nav .toggle {
     display: flex;
     justify-content: center;

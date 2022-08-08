@@ -21,6 +21,9 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
+Route::get('contact', [HomeController::class, 'contact'])->name('home.contact');
+Route::get('about', [HomeController::class, 'about'])->name('home.about');
+Route::post('contact', [HomeController::class, 'send'])->name('home.send');
 
 
 
