@@ -7,11 +7,10 @@
                 <i class="fa-solid fa-xmark fermer text-2xl cursor-pointer fermer" title="Fermer"></i>
             </div>
         </nav>
-        <div>
-            
-            <a href="{{route('home')}}" class="flex flex-row justify-center text-2xl">
+        <div class="hidden sm:block">
+            <a href="{{route('welcome')}}" class="flex flex-row justify-center text-2xl">
                 <img src="{{Storage::url('icon/tchop_et_yamo.png')}}" alt="Tcop et Yamo">
-                <span class="font-extrabold text-orange-400 ml-2">Tchop<span class="text-gray-300">Et</span>Yamo</span>
+                <span class="hidden md:inline font-extrabold text-orange-400 ml-2">Tchop<span class="text-gray-300">Et</span>Yamo</span>
             </a>
 
     </div>
@@ -19,7 +18,7 @@
     <div>
         <form action="{{route('welcome')}}" method="post" class="border rounded-2xl bg-white h-10 px-2 box-border truncate flex items-center  " >
             @csrf
-            <input type="text" name="rechercher" placeholder="Taper ici pour rechercher une recette" class="focus:outline-none w-72">
+            <input type="text" name="rechercher" placeholder="Taper ici pour rechercher une recette" class="focus:outline-none sm:w-72">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     </div>

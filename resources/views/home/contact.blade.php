@@ -11,18 +11,18 @@
             <div class="corps-formulaire flex flex-wrap flex-col sm:flex-row w-full">
                 <div class="gauche w-full sm:w-[45%]">
                     <div class="groupe relative mt-5 flex flex-col">
-                        <label for="nom">Votre Prénom</label>
-                        <input type="text" autocomplete="off" class="mt-1 py-2 pl-7 pr-1 border border-orange-500 outline-orange-400">
+                        <label for="nom">Votre nom</label>
+                        <input type="text" autocomplete="off" value="{{old('name') ?? Auth::check() ? Auth::user()->name : ''}}" name="name" class="mt-1 py-2 pl-7 pr-1 border border-orange-500 outline-orange-400">
                         <i class="fas fa-user absolute l-0 top-8 p-2 text-orange-500"></i>
                     </div>
                     <div class="groupe relative mt-5 flex flex-col">
                         <label for="email">Votre adresse e-mail</label>
-                        <input type="email" autocomplete="off" class="mt-1 py-2 pl-7 pr-1 border border-orange-500 outline-orange-400">
+                        <input type="email" autocomplete="off" value="{{old('email') ?? Auth::check() ? Auth::user()->email: ''}}" name="email" class="mt-1 py-2 pl-7 pr-1 border border-orange-500 outline-orange-400">
                         <i class="fas fa-envelope absolute l-0 top-8 p-2 text-orange-500"></i>
                     </div>
                     <div class="groupe relative mt-5 flex flex-col">
                         <label for="email">Votre téléphone</label>
-                        <input type="tel" autocomplete="off" class="mt-1 py-2 pl-7 pr-1 border border-orange-500 outline-orange-400">
+                        <input type="tel" autocomplete="off" value="{{old('tel')}}" name="name" class="mt-1 py-2 pl-7 pr-1 border border-orange-500 outline-orange-400">
                         <i class="fas fa-mobile absolute l-0 top-8 p-2 text-orange-500"></i>
                     </div>
                 </div>
