@@ -72,7 +72,8 @@ Route::get('/categories/{categorie}', [CategorieController::class, 'show'])->nam
 Route::get('/recettes', [RecetteController::class, 'index'])->name('recettes.index');
 Route::get('/recettes/recentes', [RecetteController::class, 'recentes'])->name('recettes.recentes');
 Route::get('/recettes/populaires', [RecetteController::class, 'populaires'])->name('recettes.populaires');
-Route::get('/recettes/{id}', [RecetteController::class, 'index'])->name('recettes.show');
-Route::get('/recettes/{id}/edit', [RecetteController::class, 'index'])->name('recettes.edit');
-Route::put('/recettes/{id}', [RecetteController::class, 'index'])->name('recettes.update');
-Route::delete('/recettes/{id}', [RecetteController::class, 'index'])->name('recettes.delete');
+Route::get('/recettes/rapides', [RecetteController::class, 'rapides'])->name('recettes.rapides');
+Route::get('/recettes/{recette}', [RecetteController::class, 'show'])->name('recettes.show');
+Route::get('/recettes/{recette}/edit', [RecetteController::class, 'edit'])->name('recettes.edit');
+Route::put('/recettes/{recette}', [RecetteController::class, 'update'])->name('recettes.update');
+Route::delete('/recettes/{recette}', [RecetteController::class, 'delete'])->name('recettes.delete');
