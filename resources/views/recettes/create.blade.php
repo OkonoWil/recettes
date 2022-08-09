@@ -44,9 +44,9 @@
                 </div>
                 <div class="flex flex-row flex-wrap">
                     @forelse ($categories as $categorie)
-                    <label class="mr-3">
-                        <input type="radio" name="categorie_id" value="{{$categorie->id}}"> {{$categorie->name}}
-                    </label>
+                        <label class="mr-3">
+                            <input type="radio" name="categorie_id" value="{{$categorie->id}}"> {{$categorie->name}}
+                        </label>
                     @empty
                     <span>Aucune catégorie actuellement disponible</span>
                     @endforelse

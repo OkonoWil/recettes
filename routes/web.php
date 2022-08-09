@@ -70,6 +70,8 @@ Route::get('/categories/{categorie}', [CategorieController::class, 'show'])->nam
 
 
 Route::get('/recettes', [RecetteController::class, 'index'])->name('recettes.index');
+Route::get('/recettes/recentes', [RecetteController::class, 'recentes'])->name('recettes.recentes');
+Route::get('/recettes/populaires', [RecetteController::class, 'populaires'])->name('recettes.populaires');
 Route::get('/recettes/{id}', [RecetteController::class, 'index'])->name('recettes.show');
 Route::get('/recettes/{id}/edit', [RecetteController::class, 'index'])->name('recettes.edit');
 Route::put('/recettes/{id}', [RecetteController::class, 'index'])->name('recettes.update');

@@ -14,11 +14,11 @@ class RecetteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $recettes2 = Recette::latest()->paginate(4);
-        $recettes = Recette::all();
-        return view('recettes.index', ['recettes' => $recettes, 'recentes' => $recettes2]);
+        $recettes1 = Recette::orderByDesc('vue')->get()->take(5);
+        $recettes2 = Recette::latest()->get()->take(5);
+        return view('recettes.index', ['populaires' => $recettes1, 'recentes' => $recettes2]);
     }
 
     /**
@@ -50,6 +50,7 @@ class RecetteController extends Controller
 
         $ingredients = serialize($request->ingredients);
         $preparation = serialize($request->preparation);
+
         $filename = 'recette' . time() . 'user' . $request->user()->id . '.' . $request->image->extension();
         $path = $request->image->storeAs(
             'images/recettes',
@@ -114,5 +115,16 @@ class RecetteController extends Controller
     public function destroy(Recette $recette)
     {
         //
+    }
+
+    public function recentes()
+    {
+        $recettes = Recette::latest()->paginate(8);
+        return view('recettes.list', ['recettes' => $recettes, 'name' => 'Recettes les plus récentes']);
+    }
+    public function populaires()
+    {
+        $recettes = Recette::orderByDesc('vue')->paginate(8);
+        return view('recettes.list', ['recettes' => $recettes, 'name' => 'Recettes les plus populaires']);
     }
 }
