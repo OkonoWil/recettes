@@ -10,13 +10,13 @@
     <form action="{{route('postlogin')}}" method="post" class="box-border">
         @csrf
         <div class=" box-border w-full mb-1">
-            <input type="email" name="email" id="email" placeholder="Adresse e-mail" class="block p-2.5 bg-gray-50 text-gray-600 w-full box-border border border-gray-500 rounded-md @error('email') mb-0 @enderror" value="{{old('email')}}">
+            <input type="email" name="email" id="email" placeholder="Adresse e-mail" class="outline-teal-500 block p-2.5 bg-gray-50 text-gray-600 w-full box-border border border-gray-500 rounded-md @error('email') mb-0 @enderror" value="{{old('email')}}">
             @error('email')
                 <span class="text-sm text-red-500">{{$message}}</span>
             @enderror
         </div>
         <div class=" box-border">
-            <input type="password" name="password" id="password" placeholder="Mot de passe" class="block p-2.5 bg-gray-50 text-gray-600 w-full border border-gray-500 rounded-md @error('password') mb-0 @enderror">
+            <input type="password" name="password" id="password" placeholder="Mot de passe" class="outline-teal-500 block p-2.5 bg-gray-50 text-gray-600 w-full border border-gray-500 rounded-md @error('password') mb-0 @enderror">
             @error('password')
                 <span class="text-sm text-red-500">{{$message}}</span>
             @enderror

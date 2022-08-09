@@ -19,7 +19,7 @@
                     <span class="text-red-500">{{$message}}</span>
                     @enderror
                 </div>
-                <input class="focus:ring-0 focus:border-transparent focus:outline border-2 rounded-md @error('name') border-red-400 @else border-gray-500  @enderror" type="text" name="name" id="name" value="{{old('name')}}" placeholder="Entrez le nom de la recette">
+                <input class="focus:ring-0 focus:border-transparent focus:outline border-2 rounded-md @error('name') border-red-400 @else border-gray-500  @enderror" type="text" name="name" id="name" value="o" placeholder="Entrez le nom de la recette">
             </div>
             <div class="w-96 flex flex-col m-1 box-border">
                 <div>
