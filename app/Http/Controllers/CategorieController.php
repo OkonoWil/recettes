@@ -89,7 +89,7 @@ class CategorieController extends Controller
         $categorie->save();
 
         $categories = Categorie::all();
-        return redirect()->route('categories.index', ['categories' => $categories]);
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -102,5 +102,10 @@ class CategorieController extends Controller
     {
         Categorie::findOrFail($categorie->id)->delete();
         return redirect()->route('categories.index');
+    }
+    public function search(Request $request)
+    {
+        $categories = Categorie::where('name', 'like', "%$request->search%")->paginate(3);
+        return view('categories.index', ['categories' => $categories]);
     }
 }

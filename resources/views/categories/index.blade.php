@@ -39,9 +39,13 @@
                 </div>
             </section>
         @empty
-            <p>Aucune catégorie</p>
+            @if (request()->is('search'))
+                <p>Aucune catégorie trouvée...</p>
+            @else
+                <p>Aucune catégorie</p>
+            @endif
         @endforelse
-        <div class="flex justify-center mt-10">
+        <div class="flex justify-center mt-10 mb-5">
             <div class="w-36 flex justify-around">
                 {{$categories->links('pagination::tailwind')}}
             </div>

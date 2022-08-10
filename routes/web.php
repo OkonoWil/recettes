@@ -63,15 +63,15 @@ route::post('/register', [UserController::class, 'postRegister'])->name('postreg
 route::get('/login', [UserController::class, 'getLogin'])->name('getlogin');
 
 Route::get('/categories', [CategorieController::class, 'index'])->name('categories.index');
+Route::get('/categories/search', [CategorieController::class, 'search'])->name('categories.search');
 Route::get('/categories/{categorie}', [CategorieController::class, 'show'])->name('categories.show');
-Route::post('/search', [CategorieController::class, 'search'])->name('categories.search');
 
 
 
 
 
 Route::get('/recettes', [RecetteController::class, 'index'])->name('recettes.index');
-Route::post('/search', [RecetteController::class, 'search'])->name('recettes.search');
+Route::get('/recettes/search', [RecetteController::class, 'search'])->name('recettes.search');
 Route::get('/recettes/recentes', [RecetteController::class, 'recentes'])->name('recettes.recentes');
 Route::get('/recettes/populaires', [RecetteController::class, 'populaires'])->name('recettes.populaires');
 Route::get('/recettes/rapides', [RecetteController::class, 'rapides'])->name('recettes.rapides');

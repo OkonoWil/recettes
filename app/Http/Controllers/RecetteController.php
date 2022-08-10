@@ -137,7 +137,8 @@ class RecetteController extends Controller
     }
     public function search(Request $request)
     {
-        $search = Recette::where('name', 'like', "%$request->search%")->paginate(4);
+        $search = Recette::where('name', 'like', "%$request->search%")->paginate(8);
+
         return view('recettes.list', ['recettes' => $search, 'name' => 'Resultat de la recherche de "' . "$request->search" . '"']);
     }
 }
