@@ -16,9 +16,9 @@
     </div>
     </div>
     <div>
-        <form action="{{route('welcome')}}" method="post" class="border rounded-2xl bg-white h-10 px-2 box-border truncate flex items-center  " >
+        <form action="{{route('recettes.search')}}" method="post" class="border rounded-2xl bg-white h-10 px-2 box-border truncate flex items-center  " >
             @csrf
-            <input type="text" name="rechercher" placeholder="Taper ici pour rechercher une recette" class="focus:outline-none sm:w-72">
+            <input type="text" name="search" placeholder="Taper ici pour rechercher une recette" class="focus:outline-none sm:w-72">
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     </div>

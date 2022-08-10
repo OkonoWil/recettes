@@ -9,7 +9,11 @@
     
     <div class="ok-min-h">
        @empty($recettes)
-            <p>Aucune recettes</p>
+            @if (request()->is('search'))
+                <p>Aucune recette trouvée...</p>
+            @else
+                <p>Aucune recette</p>
+            @endif
        @else
             <section class="my-2">
                 <div class="text-xl text-orange-500 font-bold flex flex-row justify-between px-4 py-2 mt-4 mb-2 bg-orange-100">
@@ -24,7 +28,7 @@
                 </div>
             </section>
        @endempty
-        <div class="flex justify-center mt-10">
+        <div class="flex justify-center mt-10 mb-5">
             <div class="w-36 flex justify-around">
                 {{$recettes->links('pagination::tailwind')}}
             </div>

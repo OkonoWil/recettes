@@ -18,7 +18,7 @@ class RecetteController extends Controller
     {
         $recettes1 = Recette::orderByDesc('vue')->get()->take(5);
         $recettes2 = Recette::latest()->get()->take(5);
-        $recettes3 = Recette::orderBy('duree')->take(5);
+        $recettes3 = Recette::orderBy('duree')->get()->take(5);
         return view('recettes.index', ['populaires' => $recettes1, 'recentes' => $recettes2, 'rapides' => $recettes3]);
     }
 
@@ -81,6 +81,8 @@ class RecetteController extends Controller
      */
     public function show(Recette $recette)
     {
+        $recette->vue += 1;
+        $recette->save();
         return view('recettes.show', ['recette' => $recette]);
     }
 
@@ -132,5 +134,10 @@ class RecetteController extends Controller
     {
         $rapides = Recette::orderBy('duree')->paginate(8);
         return view('recettes.list', ['recettes' => $rapides, 'name' => 'Recettes avec le meilleur temps de cuissons']);
+    }
+    public function search(Request $request)
+    {
+        $search = Recette::where('name', 'like', "%$request->search%")->paginate(4);
+        return view('recettes.list', ['recettes' => $search, 'name' => 'Resultat de la recherche de "' . "$request->search" . '"']);
     }
 }

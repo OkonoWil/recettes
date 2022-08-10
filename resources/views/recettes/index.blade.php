@@ -14,7 +14,7 @@
             <span>Recettes les plus populaires</span>
             <span>
                 @if ($populaires->count()>4)
-                    <a  href="{{route('recettes.recentes')}}" class="px-2 py-1 rounded-md hover:text-white hover:bg-orange-500">Voir plus</a>
+                    <a  href="{{route('recettes.populaires')}}" class="px-2 py-1 rounded-md hover:text-white hover:bg-orange-500">Voir plus</a>
                 @endif
             </span>
         </div>
@@ -31,7 +31,7 @@
             <span>Recettes les plus récentes</span>
             <span>
                 @if ($recentes->count()>4)
-                    <a  href="{{route('recettes.populaires')}}" class="px-2 py-1 rounded-md hover:text-white hover:bg-orange-500">Voir plus</a>
+                    <a  href="{{route('recettes.recentes')}}" class="px-2 py-1 rounded-md hover:text-white hover:bg-orange-500">Voir plus</a>
                 @endif
             </span>
         </div>

@@ -38,7 +38,7 @@
                 </div>
             </section>
        @endempty
-        <div class="flex justify-center mt-10">
+        <div class="flex justify-center mt-10 mb-5">
             <div class="w-36 flex justify-around">
                 {{$recettes->links('pagination::tailwind')}}
             </div>
