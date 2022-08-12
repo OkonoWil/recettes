@@ -68,4 +68,16 @@ class UserController extends Controller
         Auth::logout();
         return redirect()->route('welcome');
     }
+    public function profil()
+    {
+        return view('auth.show');
+    }
+    public function edit()
+    {
+        return view('auth.edit');
+    }
+    public function store()
+    {
+        return redirect()->route('auth.profil');
+    }
 }

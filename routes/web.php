@@ -51,6 +51,9 @@ Route::middleware('auth')->group(function () {
     route::get('/logout', [UserController::class, 'logout'])->name('auth.logout');
     Route::post('/recettes', [RecetteController::class, 'store'])->name('recettes.store');
     Route::get('/recettes/create', [RecetteController::class, 'create'])->name('recettes.create');
+    route::get('/user/profil', [UserController::class, 'profil'])->name('auth.profil');
+    route::get('/user/edit', [UserController::class, 'edit'])->name('auth.edit');
+    route::post('/user/edit', [UserController::class, 'store'])->name('auth.store');
 });
 
 
@@ -61,6 +64,7 @@ route::post('/login', [UserController::class, 'postLogin'])->name('postlogin');
 route::get('/register', [UserController::class, 'getRegister'])->name('getregister');
 route::post('/register', [UserController::class, 'postRegister'])->name('postregister');
 route::get('/login', [UserController::class, 'getLogin'])->name('getlogin');
+
 
 Route::get('/categories', [CategorieController::class, 'index'])->name('categories.index');
 Route::get('/categories/search', [CategorieController::class, 'search'])->name('categories.search');

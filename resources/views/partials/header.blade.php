@@ -15,7 +15,7 @@
 
     </div>
     </div>
-    <div>
+    <div>{{-- --}}
         <form 
             @if(request()->is("categories") || request()->is("categories/*"))
                 action="{{route('categories.search')}}" 

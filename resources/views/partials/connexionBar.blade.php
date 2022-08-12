@@ -1,4 +1,8 @@
-<div class="flex justify-end mb-5">
+@isAdmin
+    <div class="flex justify-end mb-5 z-20 top-2 right-4 fixed">
+@else
+    <div class="flex justify-end mb-5">
+@endisAdmin
     
     @auth
         <div id="dropdown" class="flex flex-col items-between max-w-xs py-2 px-4 bg-orange-300 border border-orange-500 rounded-md text-white truncate">
@@ -9,10 +13,10 @@
             <div id="bloclinks" class="transition h-0 transition-h ">
                 <ul class="pt-3">
                     <li>
-                        <a class="hover:font-extrabold hover:text-orange-500" href="#">Profil</a>
+                        <a class="hover:font-extrabold hover:text-orange-500" href="{{route('auth.profil')}}">Profil</a>
                     </li>
                     <li>
-                        <a class="hover:font-extrabold hover:text-orange-500" href="#">Paramètre</a>
+                        <a class="hover:font-extrabold hover:text-orange-500" href="{{route('auth.edit')}}">Paramètre</a>
                     </li>
                     <li>
                         <a class="hover:font-extrabold hover:text-orange-500" href="{{route('auth.logout')}}">Déconnecter</a>
