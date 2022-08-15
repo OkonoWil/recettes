@@ -7,7 +7,7 @@
         Contactez-nous !!!
     </h1>
     <div class="ok-min-h">
-        <form action="#" method="post" class=" px-1 sm:px-8  pb-5 w-[95vw] sm:w-[80vw] -z-20 lg:w-[70vw] box-border">
+        <form action="{{route('home.send')}}" method="post" class=" px-1 sm:px-8  pb-5 w-[95vw] sm:w-[80vw] -z-20 lg:w-[70vw] box-border">
             <div class="corps-formulaire flex flex-wrap flex-col sm:flex-row w-full">
                 <div class="gauche w-full sm:w-[45%]">
                     <div class="groupe relative mt-5 flex flex-col">
