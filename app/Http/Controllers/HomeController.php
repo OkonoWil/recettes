@@ -19,7 +19,12 @@ class HomeController extends Controller
     }
     function send(Request $request)
     {
-        $this->validate($request, []);
+        $this->validate($request, [
+            'name' => ['required'],
+            'email' => ['required'],
+            'tel' => ['required'],
+            'message' => ['required', 'min:20']
+        ]);
         return redirect()->route('home.contact');
     }
     function about()
