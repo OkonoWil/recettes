@@ -25,6 +25,8 @@ class HomeController extends Controller
             'tel' => ['required'],
             'message' => ['required', 'min:20']
         ]);
+        $emailMessage = "Nom :  $request->name \t Email :  $request->email \t Tel :  $request->tel  \n\n$request->message";
+        mail('okonowilfried@gmail.com', 'TchopEtYamo contact page', $emailMessage);
         return redirect()->route('home.contact');
     }
     function about()
