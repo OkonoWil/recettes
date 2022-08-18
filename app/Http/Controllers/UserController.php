@@ -74,6 +74,7 @@ class UserController extends Controller
     }
     public function edit()
     {
+
         return view('auth.edit');
     }
     public function store()
