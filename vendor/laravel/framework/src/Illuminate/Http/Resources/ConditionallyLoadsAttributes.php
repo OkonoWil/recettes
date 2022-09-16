@@ -121,7 +121,7 @@ trait ConditionallyLoadsAttributes
     }
 
     /**
-     * Merge a value based on a given condition.
+     * Merge a value if the given condition is truthy.
      *
      * @param  bool  $condition
      * @param  mixed  $value
@@ -130,6 +130,18 @@ trait ConditionallyLoadsAttributes
     protected function mergeWhen($condition, $value)
     {
         return $condition ? new MergeValue(value($value)) : new MissingValue;
+    }
+
+    /**
+     * Merge a value unless the given condition is truthy.
+     *
+     * @param  bool  $condition
+     * @param  mixed  $value
+     * @return \Illuminate\Http\Resources\MergeValue|mixed
+     */
+    protected function mergeUnless($condition, $value)
+    {
+        return ! $condition ? new MergeValue(value($value)) : new MissingValue;
     }
 
     /**
@@ -143,6 +155,20 @@ trait ConditionallyLoadsAttributes
         return new MergeValue(
             Arr::only($this->resource->toArray(), $attributes)
         );
+    }
+
+    /**
+     * Retrieve a model attribute if it is null.
+     *
+     * @param  mixed  $value
+     * @param  mixed  $default
+     * @return \Illuminate\Http\Resources\MissingValue|mixed
+     */
+    protected function whenNull($value, $default = null)
+    {
+        $arguments = func_num_args() == 1 ? [$value] : [$value, $default];
+
+        return $this->when(is_null($value), ...$arguments);
     }
 
     /**
@@ -219,7 +245,7 @@ trait ConditionallyLoadsAttributes
             $default = new MissingValue();
         }
 
-        $attribute = Str::finish($relationship, '_count');
+        $attribute = (string) Str::of($relationship)->snake()->finish('_count');
 
         if (! isset($this->resource->getAttributes()[$attribute])) {
             return value($default);

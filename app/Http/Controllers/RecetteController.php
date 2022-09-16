@@ -16,9 +16,10 @@ class RecetteController extends Controller
      */
     public function index(Request $request)
     {
-        $recettes1 = Recette::orderByDesc('vue')->get()->take(5);
-        $recettes2 = Recette::latest()->get()->take(5);
-        $recettes3 = Recette::orderBy('duree')->get()->take(5);
+        $recettes1 = Recette::where('validation', 1)->orderByDesc('vue')->take(5)->get(['id', 'name', 'image', 'duree', 'vue', 'user_id']);
+        $recettes2 = Recette::where('validation', 1)->latest()->take(5)->get(['id', 'name', 'image', 'duree', 'vue', 'user_id']);
+        $recettes3 = Recette::where('validation', 1)->orderBy('duree')->take(5)->get(['id', 'name', 'image', 'duree', 'vue', 'user_id']);
+
         return view('recettes.index', ['populaires' => $recettes1, 'recentes' => $recettes2, 'rapides' => $recettes3]);
     }
 
@@ -41,12 +42,12 @@ class RecetteController extends Controller
      */
     public function store(Request $request)
     {
-
         $this->validate($request, [
             'name' => ['required', 'unique:recettes,name'],
             'image' => ['required'],
             'duree' => ['required'],
-            'categorie_id' => ['required']
+            'categorie_id' => ['required'],
+            'ingredients.*' =>  ['required']
         ]);
 
         $ingredients = serialize($request->ingredients);

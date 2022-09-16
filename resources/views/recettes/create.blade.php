@@ -90,7 +90,7 @@
                     @enderror
                 </div>
                 <div id="ingredients" class="flex flex-row flex-wrap p-1 my-1 mx-2 justify-evenly">
-                    <input type="text" name="ingredients[]" id="" class="focus:ring-0 focus:border-transparent focus:outline border-2 rounded-md border-gray-500 p-1 my-1 mx-2">
+                    <input type="text" name="ingredients[0]" id="" class="ingredients focus:ring-0 focus:border-transparent focus:outline border-2 rounded-md border-gray-500 p-1 my-1 mx-2">
                 </div>
                 <div class="flex flex-row justify-end">
                     <span id="btnIng" class="cursor-pointer bg-green-400 border-2 border-green-700 rounded-xl text-white font-bold p-2 m-2">Ajouter un ingrédient</span>
@@ -110,7 +110,7 @@
                     @enderror
                 </div>
                 <div id="preparations" class="flex flex-row flex-wrap p-1 my-1 mx-2 justify-evenly">
-                    <input type="text" name="preparation[]" id="" class="focus:ring-0 focus:border-transparent focus:outline border-2 rounded-md border-gray-500 p-1 my-1 mx-2">
+                    <input type="text" name="preparation[0]" id="" class="preparation focus:ring-0 focus:border-transparent focus:outline border-2 rounded-md border-gray-500 p-1 my-1 mx-2">
                 </div>
                 <div class="flex flex-row justify-end">
                     <span id="btnPrepa" class="cursor-pointer bg-green-400 border-2 border-green-700 rounded-xl text-white font-bold p-2 m-2">Ajouter une étape </span>
