@@ -10,7 +10,7 @@
     
     <div class="ok-min-h flex flex-col sm:flex-row">
         <section class="my-2 flex flex-col">
-            <form action="{{route('auth.store')}}" method="post">
+            <form>
                 @csrf
                 <div class="m-1 flex flex-col sm:flex-row w-full box-border">
                     <div class="mr-1 sm:mr-5 w-full sm:w-1/2 box-border">

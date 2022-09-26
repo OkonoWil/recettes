@@ -50,11 +50,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
 ////***************************ROUTE-only-user_auth******************************/
 Route::middleware('auth')->group(function () {
     route::get('/logout', [UserController::class, 'logout'])->name('auth.logout');
-    Route::post('/recettes', [RecetteController::class, 'store'])->name('recettes.store');
-    Route::get('/recettes/create', [RecetteController::class, 'create'])->name('recettes.create');
-    route::get('/user/profil', [UserController::class, 'profil'])->name('auth.profil');
-    route::get('/user/edit', [UserController::class, 'edit'])->name('auth.edit');
-    route::post('/user/edit', [UserController::class, 'store'])->name('auth.store');
+    Route::post('/recettes', [RecetteController::class, 'store'])->name('client.recettes.store');
+    Route::get('/recettes/create', [RecetteController::class, 'create'])->name('client.recettes.create');
+    route::get('/user/profil', [UserController::class, 'profil'])->name('client.auth.profil');
+    route::get('/user/edit', [UserController::class, 'edit'])->name('client.auth.edit');
+    route::post('/user/edit', [UserController::class, 'store'])->name('client.auth.store');
 });
 
 

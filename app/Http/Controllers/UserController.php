@@ -29,7 +29,7 @@ class UserController extends Controller
         }
         Auth::login($user, $request->remember);
         if (Auth::user()->admin) {
-            return redirect()->intended('home');
+            return redirect()->intended('admin');
         } else {
             return redirect()->intended(RouteServiceProvider::HOME);
         }

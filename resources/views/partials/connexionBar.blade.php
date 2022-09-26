@@ -13,10 +13,10 @@
             <div id="bloclinks" class="transition h-0 transition-h ">
                 <ul class="pt-3">
                     <li>
-                        <a class="hover:font-extrabold hover:text-orange-500" href="{{route('auth.profil')}}">Profil</a>
+                        <a class="hover:font-extrabold hover:text-orange-500" href="{{route('client.auth.profil')}}">Profil</a>
                     </li>
                     <li>
-                        <a class="hover:font-extrabold hover:text-orange-500" href="{{route('auth.edit')}}">Paramètre</a>
+                        <a class="hover:font-extrabold hover:text-orange-500" href="{{route('client.auth.edit')}}">Paramètre</a>
                     </li>
                     <li>
                         <a class="hover:font-extrabold hover:text-orange-500" href="{{route('auth.logout')}}">Déconnecter</a>
