@@ -6,7 +6,7 @@
     <h1 class="text-3xl text-orange-500 font-extrabold my-2 ">
         Ajouter une categorie
     </h1>
-    <form action="{{route('categories.store')}}" method="POST" class="border-gray-500 border-2 box-border rounded-lg p-4 m-5 mb-36 w-96">
+    <form action="{{route('admin.categories.store')}}" method="POST" class="border-gray-500 border-2 box-border rounded-lg p-4 m-5 mb-36 w-96">
         @csrf
         <div class="w-full flex flex-col">
             <div class="w-full flex flex-col m-1 text-xl box-border">

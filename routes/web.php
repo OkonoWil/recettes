@@ -6,8 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\client\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\client\RecetteController;
-use App\Http\Controllers\client\CategorieController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Client\CategorieController;
+use App\Http\Controllers\Admin\AdminCategorieController;
+use App\Http\Controllers\Admin\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,13 +35,13 @@ Route::post('contact', [HomeController::class, 'send'])->name('client.home.send'
 
 ////***************************ROUTE-only-Admin******************************/
 Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class]);
-    Route::get('/home', [HomeController::class, 'home'])->name('home');
-    Route::get('/categories/create', [CategorieController::class, 'create'])->name('categories.create');
-    Route::post('/categories', [CategorieController::class, 'store'])->name('categories.store');
-    Route::get('/categories/{categorie}/edit', [CategorieController::class, 'edit'])->name('categories.edit');
-    Route::delete('/categories/{categorie}', [CategorieController::class, 'destroy'])->name('categories.delete');
-    Route::put('/categories/{categorie}', [CategorieController::class, 'update'])->name('categories.update');
+    Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin', [DashboardController::class, 'home'])->name('admin.home');
+    Route::get('/admin/categories/create', [AdminCategorieController::class, 'create'])->name('admin.categories.create');
+    Route::post('/admin/categories', [AdminCategorieController::class, 'store'])->name('admin.categories.store');
+    Route::get('/admin/categories/{categorie}/edit', [AdminCategorieController::class, 'edit'])->name('admin.categories.edit');
+    Route::delete('/admin/categories/{categorie}', [AdminCategorieController::class, 'destroy'])->name('admin.categories.delete');
+    Route::put('/admin/categories/{categorie}', [AdminCategorieController::class, 'update'])->name('admin.categories.update');
 });
 
 

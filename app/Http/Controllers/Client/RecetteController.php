@@ -20,7 +20,7 @@ class RecetteController extends Controller
         $recettes2 = Recette::where('validation', 1)->latest()->take(5)->get(['id', 'name', 'image', 'duree', 'vue', 'user_id']);
         $recettes3 = Recette::where('validation', 1)->orderBy('duree')->take(5)->get(['id', 'name', 'image', 'duree', 'vue', 'user_id']);
 
-        return view('recettes.index', ['populaires' => $recettes1, 'recentes' => $recettes2, 'rapides' => $recettes3]);
+        return view('client.recettes.index', ['populaires' => $recettes1, 'recentes' => $recettes2, 'rapides' => $recettes3]);
     }
 
     /**
@@ -31,7 +31,7 @@ class RecetteController extends Controller
     public function create()
     {
         $categories = Categorie::all();
-        return view('recettes.create', ['categories' => $categories]);
+        return view('client.recettes.create', ['categories' => $categories]);
     }
 
     /**
@@ -71,7 +71,7 @@ class RecetteController extends Controller
             'other_categorie' => $request->categorie_id == 0 ? $request->other_categorie : "",
         ]);
 
-        return redirect()->route('recettes.create');
+        return redirect()->route('client.recettes.create');
     }
 
     /**
@@ -84,7 +84,7 @@ class RecetteController extends Controller
     {
         $recette->vue += 1;
         $recette->save();
-        return view('recettes.show', ['recette' => $recette]);
+        return view('client.recettes.show', ['recette' => $recette]);
     }
 
     /**
@@ -124,22 +124,22 @@ class RecetteController extends Controller
     public function recentes()
     {
         $recettes = Recette::where('validation', 1)->latest()->paginate(8);
-        return view('recettes.list', ['recettes' => $recettes, 'name' => 'Recettes les plus récentes']);
+        return view('client.recettes.list', ['recettes' => $recettes, 'name' => 'Recettes les plus récentes']);
     }
     public function populaires()
     {
         $recettes = Recette::where('validation', 1)->orderByDesc('vue')->paginate(8);
-        return view('recettes.list', ['recettes' => $recettes, 'name' => 'Recettes les plus populaires']);
+        return view('client.recettes.list', ['recettes' => $recettes, 'name' => 'Recettes les plus populaires']);
     }
     public function rapides()
     {
         $rapides = Recette::where('validation', 1)->orderBy('duree')->paginate(8);
-        return view('recettes.list', ['recettes' => $rapides, 'name' => 'Recettes avec le meilleur temps de cuissons']);
+        return view('client.recettes.list', ['recettes' => $rapides, 'name' => 'Recettes avec le meilleur temps de cuissons']);
     }
     public function search(Request $request)
     {
         $search = Recette::where('name', 'like', "%$request->search%")->paginate(8);
 
-        return view('recettes.list', ['recettes' => $search, 'name' => 'Resultat de la recherche de "' . "$request->search" . '"']);
+        return view('client.recettes.list', ['recettes' => $search, 'name' => 'Resultat de la recherche de "' . "$request->search" . '"']);
     }
 }

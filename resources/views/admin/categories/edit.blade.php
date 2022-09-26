@@ -7,7 +7,7 @@
 <h1 class="text-3xl text-orange-500 font-extrabold my-2 ">
     Modifier la categorie
 </h1>
-<form action="{{route('categories.update', ['categorie' => $categorie])}}" method="POST" class="border-gray-500 border-2 box-border rounded-lg p-4 m-5 mb-36 w-96">
+<form action="{{route('admin.categories.update', ['categorie' => $categorie])}}" method="POST" class="border-gray-500 border-2 box-border rounded-lg p-4 m-5 mb-36 w-96">
     @csrf
     @method('PUT')
     <div class="w-full flex flex-col">

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Client;
 
 use App\Models\Recette;
 use App\Models\Categorie;
@@ -19,32 +19,7 @@ class CategorieController extends Controller
     {
         $categories = Categorie::orderBy('name')->paginate(3);
 
-        return view('categories.index', ['categories' => $categories]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('categories.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $this->validate($request, [
-            'name' => ['required', 'unique:Categories,name']
-        ]);
-        Categorie::query()->create($request->except(['_token']));
-        return redirect()->route('categories.index');
+        return view('client.categories.index', ['categories' => $categories]);
     }
 
     /**
@@ -58,54 +33,12 @@ class CategorieController extends Controller
         $recettes = Recette::where('categorie_id', $categorie->id)
             ->orderBy('name')
             ->paginate(8);
-        return view('categories.show', ['categorie' => $categorie, 'recettes' => $recettes]);
+        return view('client.categories.show', ['categorie' => $categorie, 'recettes' => $recettes]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Categorie  $categorie
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Categorie $categorie)
-    {
-        return view('categories.edit', ['categorie' => $categorie]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Categorie  $categorie
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Categorie $categorie)
-    {
-        $this->validate($request, [
-            'name' => ['required', 'unique:Categories,name,' . $categorie->id]
-        ]);
-        $categorie->name = $request->name;
-        $categorie->updated_at = now();
-        $categorie->save();
-
-        $categories = Categorie::all();
-        return redirect()->route('categories.index');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Categorie  $categorie
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Categorie $categorie)
-    {
-        Categorie::findOrFail($categorie->id)->delete();
-        return redirect()->route('categories.index');
-    }
     public function search(Request $request)
     {
         $categories = Categorie::where('name', 'like', "%$request->search%")->paginate(3);
-        return view('categories.index', ['categories' => $categories]);
+        return view('client.categories.index', ['categories' => $categories]);
     }
 }
