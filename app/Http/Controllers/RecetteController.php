@@ -123,17 +123,17 @@ class RecetteController extends Controller
 
     public function recentes()
     {
-        $recettes = Recette::latest()->paginate(8);
+        $recettes = Recette::where('validation', 1)->latest()->paginate(8);
         return view('recettes.list', ['recettes' => $recettes, 'name' => 'Recettes les plus récentes']);
     }
     public function populaires()
     {
-        $recettes = Recette::orderByDesc('vue')->paginate(8);
+        $recettes = Recette::where('validation', 1)->orderByDesc('vue')->paginate(8);
         return view('recettes.list', ['recettes' => $recettes, 'name' => 'Recettes les plus populaires']);
     }
     public function rapides()
     {
-        $rapides = Recette::orderBy('duree')->paginate(8);
+        $rapides = Recette::where('validation', 1)->orderBy('duree')->paginate(8);
         return view('recettes.list', ['recettes' => $rapides, 'name' => 'Recettes avec le meilleur temps de cuissons']);
     }
     public function search(Request $request)
