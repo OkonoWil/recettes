@@ -3,10 +3,10 @@
 use App\Http\Middleware\IsAdmin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\client\HomeController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\RecetteController;
-use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\client\RecetteController;
+use App\Http\Controllers\client\CategorieController;
 use App\Http\Controllers\DashboardController;
 
 /*
@@ -21,9 +21,9 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', [HomeController::class, 'welcome'])->name('welcome');
-Route::get('contact', [HomeController::class, 'contact'])->name('home.contact');
-Route::get('about', [HomeController::class, 'about'])->name('home.about');
-Route::post('contact', [HomeController::class, 'send'])->name('home.send');
+Route::get('contact', [HomeController::class, 'contact'])->name('client.home.contact');
+Route::get('about', [HomeController::class, 'about'])->name('client.home.about');
+Route::post('contact', [HomeController::class, 'send'])->name('client.home.send');
 
 
 

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Client;
 
 use App\Models\Recette;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -11,11 +12,11 @@ class HomeController extends Controller
     {
         $recettes1 = Recette::all()->sortByDesc('created_at')->take(4);
         $recettes2 = Recette::all()->sortByDesc('vue')->take(4);
-        return view('welcome', ['recentes' => $recettes1, 'populaires' => $recettes2]);
+        return view('client.welcome', ['recentes' => $recettes1, 'populaires' => $recettes2]);
     }
     function contact()
     {
-        return view('home.contact');
+        return view('client.home.contact');
     }
     function send(Request $request)
     {
@@ -27,11 +28,11 @@ class HomeController extends Controller
         ]);
         $emailMessage = "Nom :  $request->name \t Email :  $request->email \t Tel :  $request->tel  \n\n$request->message";
         mail('okonowilfried@gmail.com', 'TchopEtYamo contact page', $emailMessage);
-        return redirect()->route('home.contact');
+        return redirect()->route('client.home.contact');
     }
     function about()
     {
-        return view('home.about');
+        return view('client.home.about');
     }
     function home()
     {
